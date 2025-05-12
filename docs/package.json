@@ -1,0 +1,18 @@
+{
+  "name": "@ryanuo/utils",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "predocs:dev": "typedoc",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "typedoc": "catalog:docs",
+    "typedoc-plugin-markdown": "catalog:docs",
+    "typedoc-vitepress-theme": "catalog:docs",
+    "typescript": "catalog:dev",
+    "vitepress": "catalog:docs"
+  }
+}
