@@ -1,8 +1,15 @@
 # @ryanuo/utils
 
-## Variables
+## Modules
 
-| Variable | Description |
+| Module | Description |
 | ------ | ------ |
-| [one](variables/one.md) | - |
-| [two](variables/two.md) | - |
+| [ai](ai/index.md) | - |
+| [algorithm](algorithm/index.md) | - |
+| [browser](browser/index.md) | - |
+| [common](common/index.md) | - |
+| [dom](dom/index.md) | - |
+| [finance](finance/index.md) | - |
+| [graphics](graphics/index.md) | - |
+| [network](network/index.md) | - |
+| [node](node/index.md) | - |

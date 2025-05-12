@@ -1,2 +1,3 @@
-export const one: number = 1
-export const two: number = 2
+export * from './common/base'
+export * from './common/is'
+export * from './algorithm'

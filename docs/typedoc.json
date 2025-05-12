@@ -4,5 +4,6 @@
   "readme": "none",
   "indexFormat": "table",
   "useCodeBlocks": true,
-  "disableSources": true
+  "disableSources": true,
+  "exclude": ["../src/index.ts"]
 }
