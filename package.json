@@ -1,18 +1,18 @@
 {
-  "name": "pkg-ph",
+  "name": "@ryanuo/utils",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.2",
   "packageManager": "pnpm@9.5.0",
   "description": "_description_",
   "author": "ryanuo <ryanuo@aliyun.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/ryanuo",
-  "homepage": "https://github.com/ryanuo/pkg-ph#readme",
+  "homepage": "https://github.com/ryanuo/@ryanuo/utils#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryanuo/pkg-ph.git"
+    "url": "git+https://github.com/ryanuo/@ryanuo/utils.git"
   },
-  "bugs": "https://github.com/ryanuo/pkg-ph/issues",
+  "bugs": "https://github.com/ryanuo/@ryanuo/utils/issues",
   "keywords": [],
   "sideEffects": false,
   "exports": {
