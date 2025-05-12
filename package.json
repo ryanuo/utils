@@ -1,7 +1,10 @@
 {
   "name": "@ryanuo/utils",
   "type": "module",
-  "version": "0.0.7",
+  "version": "0.0.8",
+  "publishConfig": {
+    "access": "public"
+  },
   "packageManager": "pnpm@9.5.0",
   "description": "_description_",
   "author": "ryanuo <ryanuo@aliyun.com>",
