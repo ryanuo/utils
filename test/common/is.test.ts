@@ -1,6 +1,7 @@
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import {
   isBoolean,
+  isBrowser,
   isDate,
   isFunction,
   isNull,
@@ -112,5 +113,23 @@ describe('isDate', () => {
   it('should return false for non-Date objects', () => {
     expect(isDate('2023-01-01')).toBe(false)
     expect(isDate(123)).toBe(false)
+  })
+})
+
+describe('isBrowser', () => {
+  afterEach(() => {
+    vi.unstubAllGlobals()
+  })
+
+  it('should return true in browser environment', () => {
+    // 模拟浏览器环境
+    vi.stubGlobal('window', {})
+    vi.stubGlobal('document', {})
+    expect(isBrowser()).toBe(true)
+  })
+
+  it('should return false in non-browser environment', () => {
+    vi.stubGlobal('window', false)
+    expect(isBrowser()).toBe(false)
   })
 })

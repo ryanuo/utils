@@ -6,6 +6,8 @@
 function isBoolean(value): value is boolean
 ```
 
+Checks if the value is a boolean
+
 ## Parameters
 
 ### value
@@ -13,11 +15,12 @@ function isBoolean(value): value is boolean
 `unknown`
 
 The value to check
-Checks if the value is a boolean
 
 ## Returns
 
 `value is boolean`
+
+Whether the value is a boolean
 
 ## Example
 
@@ -26,9 +29,4 @@ import { isBoolean } from '@ryanuo/utils'
 isBoolean(true) // true
 isBoolean(false) // true
 isBoolean(1) // false
-isBoolean('true') // false
-isBoolean(null) // false
-isBoolean(undefined) // false
-isBoolean({}) // false
-isBoolean([]) // false
 ```

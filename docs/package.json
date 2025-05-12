@@ -3,10 +3,11 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "predocs:dev": "typedoc",
+    "predocs:dev": "typedoc && pnpm run docs:fix",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:preview": "vitepress preview",
+    "docs:fix": "npx eslint --fix ."
   },
   "devDependencies": {
     "typedoc": "catalog:docs",

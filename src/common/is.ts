@@ -1,8 +1,8 @@
 import { toString } from './base'
 
 /**
- * @param value - The value to check
  * Checks if the value is a boolean
+ * @param value - The value to check
  * @example
  * ```ts
  * import { isBoolean } from '@ryanuo/utils'
@@ -43,7 +43,7 @@ export function isNumber(value: unknown): value is number {
  * @param val - The value to check
  * @returns Whether the value is a function
  */
-export const isFunction = <T extends Function> (val: any): val is T => typeof val === 'function'
+export const isFunction = <T extends Function>(val: any): val is T => typeof val === 'function'
 
 /**
  * Checks if the value is an string
@@ -123,3 +123,17 @@ export const isRegExp = (val: any): val is RegExp => toString(val) === '[object 
  * @returns Whether the value is an date
  */
 export const isDate = (val: any): val is Date => toString(val) === '[object Date]'
+
+/**
+ * Checks if the current environment is a browser
+ * @example
+ * ```ts
+ * import { isBrowser } from '@ryanuo/utils'
+ * isBrowser() // true
+ * ```
+ * @returns Whether the current environment is a browser
+ */
+export function isBrowser(): boolean {
+  // @ts-expect-error: 'window' and 'document' may not exist in non-browser environments
+  return typeof window !== 'undefined' && typeof document !== 'undefined'
+}
