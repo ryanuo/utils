@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 import typedocSidebar from '../api/typedoc-sidebar.json'
 
 function transDocsJson(typedocSidebar: any) {
+  const keysList = ['Reference', 'Project', 'Module', 'Namespace', 'Enum', 'EnumMember', 'Class', 'Interface', 'TypeAlias', 'Constructor', 'Property', 'Variable', 'Function', 'Accessor', 'Method', 'Parameter', 'TypeParameter', 'TypeLiteral', 'CallSignature', 'ConstructorSignature', 'IndexSignature', 'GetSignature', 'SetSignature']
   return typedocSidebar.map((element: any) => {
     const updatedElement = {
       ...element,
@@ -10,7 +11,7 @@ function transDocsJson(typedocSidebar: any) {
 
     if (updatedElement.items?.length) {
       updatedElement.items = updatedElement.items.flatMap((item: any) =>
-        ['Reference', 'Project', 'Module', 'Namespace', 'Enum', 'EnumMember', 'Class', 'Interface', 'TypeAlias', 'Constructor', 'Property', 'Variable', 'Function', 'Accessor', 'Method', 'Parameter', 'TypeParameter', 'TypeLiteral', 'CallSignature', 'ConstructorSignature', 'IndexSignature', 'GetSignature', 'SetSignature'].includes(item.text.replace(/s$/, ''))
+        keysList.includes(item.text.replace(/s$/, ''))
           ? item.items || []
           : item,
       )
@@ -36,5 +37,8 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ryanuo/utils' },
     ],
+    search: {
+      provider: 'local',
+    },
   },
 })
