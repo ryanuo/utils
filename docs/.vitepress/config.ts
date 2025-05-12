@@ -24,6 +24,9 @@ function transDocsJson(typedocSidebar: any) {
 export default defineConfig({
   title: '@ryanuo/utils',
   description: 'A VitePress Site',
+  head: [
+    ['link', { rel: 'icon', href: '/utils.svg' }],
+  ],
   themeConfig: {
     nav: [{
       text: 'API',

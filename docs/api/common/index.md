@@ -2,6 +2,8 @@
 
 # common
 
+Common utilities and types for the project
+
 ## Functions
 
 | Function | Description |
