@@ -6,11 +6,6 @@
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![License][license-src]][license-href]
 
-_description_
-
-> **Note**:
-> Replace `@ryanuo/utils`, `_description_` globally to use this template.
-
 ## License
 
 [MIT](./LICENSE) License © 2023-PRESENT [ryanuo](https://github.com/ryanuo)

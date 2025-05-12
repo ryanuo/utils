@@ -20,4 +20,5 @@ Common utilities and types for the project
 | [isRegExp](functions/isRegExp.md) | Checks if the value is an regexp |
 | [isString](functions/isString.md) | Checks if the value is an string |
 | [isUndefined](functions/isUndefined.md) | Checks if the value is an undefined |
+| [numberToFixed](functions/numberToFixed.md) | Convert a number to a fixed value with specified decimal places. |
 | [toString](functions/toString.md) | to string type of value [Object.prototype.toString] |

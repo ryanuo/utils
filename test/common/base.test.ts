@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { getTypeName, toString } from '../../src/common/base'
+import { getTypeName, numberToFixed, toString } from '../../src/common/base'
 
 describe('getTypeName', () => {
   it('should return "object" for plain objects', () => {
@@ -84,5 +84,47 @@ describe('toString', () => {
 
   it('should return "[object RegExp]" for RegExp objects', () => {
     expect(toString(/test/)).toBe('[object RegExp]')
+  })
+})
+
+describe('numberToFixed', () => {
+  // 默认保留4位小数
+  it('should round to 4 decimal places by default', () => {
+    expect(numberToFixed(1.23456)).toBe(1.2346)
+  })
+
+  // 指定保留2位小数
+  it('should round to specified decimal places', () => {
+    expect(numberToFixed(1.23456, 2)).toBe(1.23)
+  })
+
+  // 指定保留3位小数并测试四舍五入
+  it('should correctly round up with 3 decimal places', () => {
+    expect(numberToFixed(1.23456, 3)).toBe(1.235)
+  })
+
+  // 输入为0时返回0
+  it('should return 0 when input is 0', () => {
+    expect(numberToFixed(0, 2)).toBe(0)
+  })
+
+  // 输入为NaN时返回0
+  it('should return 0 when input is NaN', () => {
+    expect(numberToFixed(Number.NaN, 2)).toBe(0)
+  })
+
+  // 测试进位到整数
+  it('should round up to integer when necessary', () => {
+    expect(numberToFixed(9.99999, 4)).toBe(10)
+  })
+
+  // 去除多余的小数0
+  it('should remove trailing zeros after decimal', () => {
+    expect(numberToFixed(1.00000, 4)).toBe(1)
+  })
+
+  // 支持负数
+  it('should handle negative numbers correctly', () => {
+    expect(numberToFixed(-1.23456, 3)).toBe(-1.235)
   })
 })
