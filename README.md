@@ -36,7 +36,7 @@ yarn add @ryanuo/utils
 
 以下是工具库中提供的模块分类：
 <!-- auto utils start -->
-| type | functions list |
+| Type | Function List |
 |------|----------------|
 | <a href="https://utils.ryanuo.cc/api/ai/" target="_blank">Ai</a> | <a href="https://utils.ryanuo.cc/api/ai/variables/test.html" target="_blank">test()</a> |
 | <a href="https://utils.ryanuo.cc/api/algorithm/" target="_blank">Algorithm</a> | <a href="https://utils.ryanuo.cc/api/algorithm/variables/test.html" target="_blank">test()</a> |

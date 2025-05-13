@@ -19,7 +19,7 @@ function linkElement(text: string, link: string, isFunction?: boolean): string {
 }
 
 function generateMarkdownTable(exports: any[]): string {
-  const lines = ['| type | functions list |', '|------|----------------|']
+  const lines = ['| Type | Function List |', '|------|----------------|']
 
   const getTopLevelFunctions = (item: any): {
     text: string
