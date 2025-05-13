@@ -1,5 +1,5 @@
 import { access, mkdir, readdir, rm, stat } from 'node:fs/promises'
-import { dirname, join, normalize } from 'node:path'
+import { dirname, join } from 'node:path'
 
 /**
  * 递归创建目录（如果不存在）
