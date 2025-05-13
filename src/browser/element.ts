@@ -44,3 +44,24 @@ export function onceEventListener(
   }
   target.addEventListener(event, wrapper)
 }
+
+/**
+ * Check if the user is visiting via a mobile device.
+ * @example
+ * ```ts
+ * import { isMobile } from '@ryanuo/utils'
+ * if (isMobile()) {
+ *   console.log('This is a mobile device.')
+ * }
+ * ```
+ * This function determines the device type by detecting the User Agent. It uses regular expressions to search for typical identifiers of mobile devices.
+ * If the User Agent contains keywords such as Android, webOS, iPhone, iPad, iPod, BlackBerry, IEMobile, or Opera Mini,
+ * it identifies the device as mobile. This information is crucial for providing responsive design and optimizing user experience.
+ *
+ * @returns {boolean} Returns true if the user appears to be using a mobile device; otherwise returns false.
+ */
+export function isMobile(): boolean {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent,
+  )
+}

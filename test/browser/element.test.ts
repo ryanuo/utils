@@ -2,7 +2,7 @@
  * @vitest-environment happy-dom
  */
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { manageClasses, onceEventListener } from '../../src/browser/element'
+import { isMobile, manageClasses, onceEventListener } from '../../src/browser/element'
 
 describe('manageClasses()', () => {
   let el: HTMLElement
@@ -70,5 +70,47 @@ describe('onceEventListener', () => {
     expect(handler).toHaveBeenCalledTimes(1)
     expect(addSpy).toHaveBeenCalledWith('click', expect.any(Function)) // 添加此行以使用 addSpy
     expect(removeSpy).toHaveBeenCalledWith('click', expect.any(Function))
+  })
+})
+
+describe('isMobile', () => {
+  it('should return true for Android devices', () => {
+    Object.defineProperty(navigator, 'userAgent', {
+      get: () => 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Mobile Safari/537.36',
+      configurable: true,
+    })
+    expect(isMobile()).toBe(true)
+  })
+
+  it('should return true for iPhone devices', () => {
+    Object.defineProperty(navigator, 'userAgent', {
+      get: () => 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1',
+      configurable: true,
+    })
+    expect(isMobile()).toBe(true)
+  })
+
+  it('should return true for iPad devices', () => {
+    Object.defineProperty(navigator, 'userAgent', {
+      get: () => 'Mozilla/5.0 (iPad; CPU OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1',
+      configurable: true,
+    })
+    expect(isMobile()).toBe(true)
+  })
+
+  it('should return false for desktop browsers', () => {
+    Object.defineProperty(navigator, 'userAgent', {
+      get: () => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+      configurable: true,
+    })
+    expect(isMobile()).toBe(false)
+  })
+
+  it('should return false for non-mobile user agents', () => {
+    Object.defineProperty(navigator, 'userAgent', {
+      get: () => 'Googlebot/2.1 (+http://www.google.com/bot.html)',
+      configurable: true,
+    })
+    expect(isMobile()).toBe(false)
   })
 })
