@@ -134,6 +134,5 @@ export const isDate = (val: any): val is Date => toString(val) === '[object Date
  * @returns Whether the current environment is a browser
  */
 export function isBrowser(): boolean {
-  // @ts-expect-error: 'window' and 'document' may not exist in non-browser environments
   return typeof window !== 'undefined' && typeof document !== 'undefined'
 }

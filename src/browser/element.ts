@@ -19,3 +19,28 @@ export function manageClasses(
 ): void {
   classes.forEach(cls => el.classList[action](cls))
 }
+
+/**
+ * 只触发一次的事件监听
+ * @example
+ * ```ts
+ * import { once } from '@ryanuo/utils'
+ * once(document, 'click', (e) => {
+ *   console.log(e)
+ * })
+ * ```
+ * @param target 目标元素
+ * @param event 事件名
+ * @param handler 处理函数
+ */
+export function onceEventListener(
+  target: EventTarget,
+  event: string,
+  handler: EventListener,
+): void {
+  const wrapper = (e: Event) => {
+    handler(e)
+    target.removeEventListener(event, wrapper)
+  }
+  target.addEventListener(event, wrapper)
+}

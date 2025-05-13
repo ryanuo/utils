@@ -8,6 +8,7 @@ Common utilities and types for the project
 
 | Function | Description |
 | ------ | ------ |
+| [curry](functions/curry.md) | Converts a function into a curried function. The feature of a curried function is that it can receive one or more arguments, and returns a new function until all required arguments are received, then executes the original function. |
 | [getTypeName](functions/getTypeName.md) | Get the type name of the value |
 | [getUuid](functions/getUuid.md) | Generate a unique UUID UUID (Universally Unique Identifier) is a standard used in distributed systems to uniquely identify information This function implements a simple UUID generation algorithm, primarily used to generate unique identifiers for use in applications |
 | [isBoolean](functions/isBoolean.md) | Checks if the value is a boolean |

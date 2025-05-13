@@ -1,8 +1,8 @@
 /**
  * @vitest-environment happy-dom
  */
-import { beforeEach, describe, expect, it } from 'vitest'
-import { manageClasses } from '../../src/browser/element'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { manageClasses, onceEventListener } from '../../src/browser/element'
 
 describe('manageClasses()', () => {
   let el: HTMLElement
@@ -45,5 +45,30 @@ describe('manageClasses()', () => {
 
     manageClasses(el, 'toggle', [])
     expect(el.classList.length).toBe(2)
+  })
+})
+
+describe('onceEventListener', () => {
+  let target: EventTarget
+  let handler: ReturnType<typeof vi.fn>
+
+  beforeEach(() => {
+    // 使用真实的 DOM 元素作为 target
+    target = document.createElement('div')
+    handler = vi.fn()
+  })
+
+  it('should call handler once and remove listener after first trigger', () => {
+    const addSpy = vi.spyOn(target, 'addEventListener')
+    const removeSpy = vi.spyOn(target, 'removeEventListener')
+
+    onceEventListener(target, 'click', handler)
+
+    // 直接触发事件
+    target.dispatchEvent(new Event('click'))
+
+    expect(handler).toHaveBeenCalledTimes(1)
+    expect(addSpy).toHaveBeenCalledWith('click', expect.any(Function)) // 添加此行以使用 addSpy
+    expect(removeSpy).toHaveBeenCalledWith('click', expect.any(Function))
   })
 })
