@@ -78,6 +78,7 @@ export const isObject = (val: any): val is object => toString(val) === '[object 
 
 /**
  * Check if an object is empty.
+ * @category is
  * @example
  * ```ts
  * import { isEmptyObject } from '@ryanuo/utils'
