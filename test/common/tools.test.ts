@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { getUuid } from '../../src'
+import { curry, getUuid } from '../../src/common/tools'
 
 describe('getUuid()', () => {
   let originalRandom: () => number
@@ -47,5 +47,36 @@ describe('getUuid()', () => {
     const uniqueUuids = new Set(uuids)
 
     expect(uniqueUuids.size).to.equal(5)
+  })
+})
+
+describe('curry()', () => {
+  it('should correctly curry a function with multiple arguments', () => {
+    const add = (a: number, b: number, c: number) => a + b + c
+    const curriedAdd = curry(add)
+
+    // Step-by-step application
+    expect(curriedAdd(1)(2)(3)).toBe(6)
+
+    // Immediate application
+    expect(curriedAdd(1, 2, 3)).toBe(6)
+
+    // Partial application
+    const addOne = curriedAdd(1)
+    expect(addOne(2, 3)).toBe(6)
+  })
+
+  it('should handle functions with varying arity', () => {
+    const identity = (x: number) => x
+    const curriedIdentity = curry(identity)
+
+    // Single argument function
+    expect(curriedIdentity(42)).toBe(42)
+
+    const multiply = (a: number, b: number) => a * b
+    const curriedMultiply = curry(multiply)
+
+    // Two argument function
+    expect(curriedMultiply(5)(6)).toBe(30)
   })
 })
