@@ -1,9 +1,16 @@
 {
-  "entryPoints": ["../src/*"],
-  "plugin": ["typedoc-plugin-markdown", "typedoc-vitepress-theme"],
+  "entryPoints": [
+    "../src/*"
+  ],
+  "plugin": [
+    "typedoc-plugin-markdown",
+    "typedoc-vitepress-theme"
+  ],
   "readme": "none",
   "indexFormat": "table",
   "useCodeBlocks": true,
   "disableSources": true,
-  "exclude": ["../src/index.ts"]
+  "exclude": [
+    "../src/index.ts"
+  ]
 }

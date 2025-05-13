@@ -3,6 +3,7 @@ import {
   isBoolean,
   isBrowser,
   isDate,
+  isEmptyObject,
   isFunction,
   isNull,
   isNumber,
@@ -131,5 +132,48 @@ describe('isBrowser', () => {
   it('should return false in non-browser environment', () => {
     vi.stubGlobal('window', false)
     expect(isBrowser()).toBe(false)
+  })
+})
+
+describe('isEmptyObject', () => {
+  it('should return true for an empty object', () => {
+    const obj = {}
+    expect(isEmptyObject(obj)).toBe(true)
+  })
+
+  it('should return false for a non-empty object', () => {
+    const obj = { a: 1 }
+    expect(isEmptyObject(obj)).toBe(false)
+  })
+
+  it('should return false for an array', () => {
+    const arr: any[] = []
+    // 根据 isEmptyObject 的逻辑，数组应该返回 false，因为它不是对象
+    expect(isEmptyObject(arr as any)).toBe(false) // 类型断言以避免编译错误
+  })
+
+  it('should return false for a non-object value', () => {
+    const values = [null, undefined, 0, '', false]
+    values.forEach((val) => {
+      expect(isEmptyObject(val as any)).toBe(false) // 类型断言以避免编译错误
+    })
+  })
+
+  it('should return false for a function', () => {
+    const func = function () {}
+    expect(isEmptyObject(func as any)).toBe(false) // 类型断言以避免编译错误
+  })
+
+  it('should correctly identify objects with prototype properties', () => {
+    const objWithProto = Object.create(null)
+    expect(isEmptyObject(objWithProto)).toBe(true)
+
+    Object.defineProperty(objWithProto, 'key', {
+      enumerable: false,
+      configurable: true,
+      writable: true,
+      value: 'value',
+    })
+    expect(isEmptyObject(objWithProto)).toBe(true)
   })
 })

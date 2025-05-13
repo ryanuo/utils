@@ -10,5 +10,6 @@ export * from './common/tools'
  */
 export * from './browser/element'
 export * from './browser/storage'
+export * from './browser/url'
 
 export * from './algorithm'

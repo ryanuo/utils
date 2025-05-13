@@ -14,6 +14,7 @@ Common utilities and types for the project
 | [isBoolean](functions/isBoolean.md) | Checks if the value is a boolean |
 | [isBrowser](functions/isBrowser.md) | Checks if the current environment is a browser |
 | [isDate](functions/isDate.md) | Checks if the value is an date |
+| [isEmptyObject](functions/isEmptyObject.md) | Check if an object is empty. |
 | [isFunction](functions/isFunction.md) | Checks if the value is a function |
 | [isNull](functions/isNull.md) | Checks if the value is an null |
 | [isNumber](functions/isNumber.md) | Checks if the value is a number |

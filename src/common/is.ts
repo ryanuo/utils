@@ -72,6 +72,18 @@ export const isString = (val: unknown): val is string => typeof val === 'string'
 export const isObject = (val: any): val is object => toString(val) === '[object Object]'
 
 /**
+ * Check if an object is empty.
+ * @example
+ * ```ts
+ * import { isEmptyObject } from '@ryanuo/utils'
+ * isEmptyObject({}) // true
+ * isEmptyObject([]) // true
+ * isEmptyObject({ a: 1 }) // false
+ * ```
+ */
+export const isEmptyObject = (val: any): val is object => isObject(val) && Object.keys(val).length === 0
+
+/**
  * Checks if the value is an undefined
  * @example
  * ```ts
