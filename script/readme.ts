@@ -33,7 +33,9 @@ function generateMarkdownTable(exports: any[]): string {
 
   for (const item of exports) {
     const topLevelFunctions = getTopLevelFunctions(item)
-    lines.push(`| ${linkElement(item.text, item.link)} | ${topLevelFunctions?.map(item => linkElement(item.text, item.link, true)).join('；') || '-'} |`)
+    lines.push(`| ${linkElement(item.text, item.link)} | ${topLevelFunctions
+      ?.filter(a => /^[a-z]/.test(a.text))
+      ?.map(item => linkElement(item.text, item.link, true)).join('；') || '-'} |`)
   }
 
   return lines.join('\n')
