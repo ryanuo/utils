@@ -3,7 +3,7 @@
 # Function: isUndefined()
 
 ```ts
-function isUndefined(val): val is undefined
+function isUndefined(val): val is undefined;
 ```
 
 Checks if the value is an undefined

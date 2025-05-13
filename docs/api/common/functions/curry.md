@@ -3,7 +3,7 @@
 # Function: curry()
 
 ```ts
-function curry<F>(fn): Curry<F>
+function curry<F>(fn): Curry<F>;
 ```
 
 Converts a function into a curried function.

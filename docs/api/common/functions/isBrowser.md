@@ -3,7 +3,7 @@
 # Function: isBrowser()
 
 ```ts
-function isBrowser(): boolean
+function isBrowser(): boolean;
 ```
 
 Checks if the current environment is a browser

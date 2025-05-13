@@ -3,7 +3,7 @@
 # Function: numberToFixed()
 
 ```ts
-function numberToFixed(num, fixed): number
+function numberToFixed(num, fixed): number;
 ```
 
 Convert a number to a fixed value with specified decimal places.

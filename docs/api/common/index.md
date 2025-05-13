@@ -22,4 +22,5 @@ Common utilities and types for the project
 | [isString](functions/isString.md) | Checks if the value is an string |
 | [isUndefined](functions/isUndefined.md) | Checks if the value is an undefined |
 | [numberToFixed](functions/numberToFixed.md) | Convert a number to a fixed value with specified decimal places. |
+| [safeJSONParse](functions/safeJSONParse.md) | Safely parses a JSON string |
 | [toString](functions/toString.md) | to string type of value [Object.prototype.toString] |

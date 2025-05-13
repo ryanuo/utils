@@ -3,7 +3,7 @@
 # Function: isBoolean()
 
 ```ts
-function isBoolean(value): value is boolean
+function isBoolean(value): value is boolean;
 ```
 
 Checks if the value is a boolean

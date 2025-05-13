@@ -4,9 +4,9 @@
 
 ```ts
 function manageClasses(
-  el,
-  action,
-  classes): void
+   el, 
+   action, 
+   classes): void;
 ```
 
 批量操作元素类名

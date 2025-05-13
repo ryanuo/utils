@@ -4,9 +4,9 @@
 
 ```ts
 function onceEventListener(
-  target,
-  event,
-  handler): void
+   target, 
+   event, 
+   handler): void;
 ```
 
 只触发一次的事件监听

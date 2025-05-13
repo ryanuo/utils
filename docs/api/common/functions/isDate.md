@@ -3,7 +3,7 @@
 # Function: isDate()
 
 ```ts
-function isDate(val): val is Date
+function isDate(val): val is Date;
 ```
 
 Checks if the value is an date

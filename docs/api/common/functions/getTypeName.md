@@ -3,7 +3,7 @@
 # Function: getTypeName()
 
 ```ts
-function getTypeName(v): string
+function getTypeName(v): string;
 ```
 
 Get the type name of the value

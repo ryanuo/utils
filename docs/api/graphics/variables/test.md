@@ -3,5 +3,5 @@
 # Variable: test
 
 ```ts
-const test: number = 1
+const test: number = 1;
 ```

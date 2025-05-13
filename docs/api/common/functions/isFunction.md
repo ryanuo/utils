@@ -3,7 +3,7 @@
 # Function: isFunction()
 
 ```ts
-function isFunction<T>(val): val is T
+function isFunction<T>(val): val is T;
 ```
 
 Checks if the value is a function

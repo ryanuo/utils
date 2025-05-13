@@ -3,7 +3,7 @@
 # Function: getUuid()
 
 ```ts
-function getUuid(): string
+function getUuid(): string;
 ```
 
 Generate a unique UUID

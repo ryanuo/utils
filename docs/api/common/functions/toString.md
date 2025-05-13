@@ -3,7 +3,7 @@
 # Function: toString()
 
 ```ts
-function toString(v): string
+function toString(v): string;
 ```
 
 to string type of value [Object.prototype.toString]

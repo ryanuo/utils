@@ -3,7 +3,7 @@
 # Function: isObject()
 
 ```ts
-function isObject(val): val is object
+function isObject(val): val is object;
 ```
 
 Checks if the value is an object

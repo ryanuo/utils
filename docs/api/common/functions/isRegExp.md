@@ -3,7 +3,7 @@
 # Function: isRegExp()
 
 ```ts
-function isRegExp(val): val is RegExp
+function isRegExp(val): val is RegExp;
 ```
 
 Checks if the value is an regexp

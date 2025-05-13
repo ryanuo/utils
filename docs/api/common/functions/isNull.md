@@ -3,7 +3,7 @@
 # Function: isNull()
 
 ```ts
-function isNull(val): val is null
+function isNull(val): val is null;
 ```
 
 Checks if the value is an null

@@ -3,7 +3,7 @@
 # Function: isString()
 
 ```ts
-function isString(val): val is string
+function isString(val): val is string;
 ```
 
 Checks if the value is an string

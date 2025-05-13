@@ -3,7 +3,7 @@
 # Function: isNumber()
 
 ```ts
-function isNumber(value): value is number
+function isNumber(value): value is number;
 ```
 
 Checks if the value is a number
