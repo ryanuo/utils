@@ -51,6 +51,9 @@
     "prepare": "simple-git-hooks",
     "fix": "npx eslint --fix ."
   },
+  "dependencies": {
+    "query-string": "catalog:build"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
     "@types/node": "catalog:dev",
@@ -59,7 +62,6 @@
     "esno": "catalog:dev",
     "happy-dom": "catalog:test",
     "lint-staged": "catalog:dev",
-    "query-string": "catalog:dev",
     "simple-git-hooks": "catalog:dev",
     "typescript": "catalog:dev",
     "unbuild": "catalog:dev",
