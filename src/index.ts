@@ -18,3 +18,4 @@ export * from './algorithm'
  * @module node
  */
 export * from './node/log'
+export * from './node/path'

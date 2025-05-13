@@ -45,7 +45,7 @@ Below are the module categories available in the utility library:
 | [Finance](https://utils.ryanuo.cc/api/finance/) | [test()](https://utils.ryanuo.cc/api/finance/variables/test.html) |
 | [Graphics](https://utils.ryanuo.cc/api/graphics/) | [test()](https://utils.ryanuo.cc/api/graphics/variables/test.html) |
 | [Network](https://utils.ryanuo.cc/api/network/) | [test()](https://utils.ryanuo.cc/api/network/variables/test.html) |
-| [Node](https://utils.ryanuo.cc/api/node/) | [logger()](https://utils.ryanuo.cc/api/node/variables/logger.html) |
+| [Node](https://utils.ryanuo.cc/api/node/) | [logger()](https://utils.ryanuo.cc/api/node/variables/logger.html)；[mkdirp()](https://utils.ryanuo.cc/api/node/functions/mkdirp.html)；[rmrf()](https://utils.ryanuo.cc/api/node/functions/rmrf.html) |
 <!-- auto utils end -->
 
 ## License
