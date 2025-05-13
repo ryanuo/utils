@@ -64,6 +64,10 @@ catalogs:
 importers:
 
   .:
+    dependencies:
+      query-string:
+        specifier: catalog:build
+        version: 9.1.2
     devDependencies:
       '@antfu/eslint-config':
         specifier: catalog:dev
@@ -86,9 +90,6 @@ importers:
       lint-staged:
         specifier: catalog:dev
         version: 15.2.2
-      query-string:
-        specifier: catalog:build
-        version: 9.1.2
       simple-git-hooks:
         specifier: catalog:dev
         version: 2.11.1
