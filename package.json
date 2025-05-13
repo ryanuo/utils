@@ -49,7 +49,8 @@
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks",
-    "fix": "npx eslint --fix ."
+    "fix": "npx eslint --fix .",
+    "readme": "esno scripts/readme.ts"
   },
   "dependencies": {
     "query-string": "catalog:build"
