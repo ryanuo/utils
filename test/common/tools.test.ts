@@ -1,6 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { getUuid } from '../../src'
-import { curry } from '../../src/common/tools'
+import { curry, getUuid, safeJSONParse } from '../../src/common/tools'
 
 describe('getUuid()', () => {
   let originalRandom: () => number
@@ -79,5 +78,43 @@ describe('curry()', () => {
 
     // Two argument function
     expect(curriedMultiply(5)(6)).toBe(30)
+  })
+})
+
+describe('safeJSONParse', () => {
+  // 正常情况
+  it('should correctly parse a valid JSON string', () => {
+    const jsonString = '{"name": "John", "age": 30}'
+    const result = safeJSONParse(jsonString)
+    expect(result).toEqual({ name: 'John', age: 30 })
+  })
+
+  // 边界情况 - 空字符串
+  it('should return null for an empty string', () => {
+    const jsonString = ''
+    const result = safeJSONParse(jsonString)
+    expect(result).toBeNull()
+  })
+
+  // 边界情况 - 空白字符
+  it('should return null for whitespace characters', () => {
+    const jsonString = '   \n\t '
+    const result = safeJSONParse(jsonString)
+    expect(result).toBeNull()
+  })
+
+  // 异常情况 - 无效的 JSON 字符串
+  it('should return null for invalid JSON strings', () => {
+    const jsonString = '{"invalid": "JSON"'
+    const result = safeJSONParse(jsonString)
+    expect(result).toBeNull()
+  })
+
+  // 异常情况 - 非字符串输入 (虽然此函数只接受字符串参数，但可以考虑非字符串类型作为额外边界情况)
+  it('should return null for non-string inputs', () => {
+    const notAString = 12345
+    // @ts-expect-error 忽略类型检查，模拟非字符串输入的情况
+    const result = safeJSONParse(notAString)
+    expect(result).toBe(12345)
   })
 })

@@ -52,3 +52,24 @@ export function curry<F extends (...args: any[]) => any>(fn: F): Curry<F> {
     }
   } as Curry<F>
 }
+
+/**
+ * Safely parses a JSON string
+ * @example
+ * ```ts
+ * import { safeParseJSON } from '@ryanuo/utils'
+ * const json = '{"name": "John", "age": 30}'
+ * const obj = safeParseJSON(json)
+ * console.log(obj) // { name: 'John', age: 30 }
+ * ```
+ * @param json The JSON string to be parsed
+ * @returns A successfully parsed JSON object, or null if parsing fails
+ */
+export function safeJSONParse(json: string) {
+  try {
+    return JSON.parse(json)
+  }
+  catch (e) {
+    return null
+  }
+}
