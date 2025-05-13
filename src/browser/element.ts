@@ -1,5 +1,6 @@
 /**
  * 批量操作元素类名
+ * @category DOM
  * @example
  * ```ts
  * import { manageClasses } from '@ryanuo/utils'
@@ -22,6 +23,7 @@ export function manageClasses(
 
 /**
  * 只触发一次的事件监听
+ * @category DOM
  * @example
  * ```ts
  * import { once } from '@ryanuo/utils'
@@ -47,6 +49,7 @@ export function onceEventListener(
 
 /**
  * Check if the user is visiting via a mobile device.
+ * @category DOM
  * @example
  * ```ts
  * import { isMobile } from '@ryanuo/utils'
@@ -68,6 +71,7 @@ export function isMobile(): boolean {
 
 /**
  * Copy text to clipboard
+ * @category DOM
  * @param text The text to be copied.
  * @returns A boolean indicating success or failure of the operation.
  */

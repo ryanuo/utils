@@ -14,6 +14,8 @@ Convert an object to URL parameters
 
 `Record`\<`string`, `string`\>
 
+The object to convert
+
 ### url?
 
 `string`

@@ -3,6 +3,7 @@ import { toString } from './base'
 /**
  * Checks if the value is a boolean
  * @param value - The value to check
+ * @category is
  * @example
  * ```ts
  * import { isBoolean } from '@ryanuo/utils'
@@ -19,6 +20,7 @@ export function isBoolean(value: unknown): value is boolean {
 /**
  * Checks if the value is a number
  * @param value - The value to check
+ * @category is
  * @example
  * ```ts
  * import { isNumber } from '@ryanuo/utils'
@@ -33,6 +35,7 @@ export function isNumber(value: unknown): value is number {
 
 /**
  * Checks if the value is a function
+ * @category is
  * @example
  * ```ts
  * import { isFunction } from '@ryanuo/utils'
@@ -47,6 +50,7 @@ export const isFunction = <T extends Function>(val: any): val is T => typeof val
 
 /**
  * Checks if the value is an string
+ * @category is
  * @example
  * ```ts
  * import { isString } from '@ryanuo/utils'
@@ -60,6 +64,7 @@ export const isString = (val: unknown): val is string => typeof val === 'string'
 
 /**
  * Checks if the value is an object
+ * @category is
  * @example
  * ```ts
  * import { isObject } from '@ryanuo/utils'
@@ -85,6 +90,7 @@ export const isEmptyObject = (val: any): val is object => isObject(val) && Objec
 
 /**
  * Checks if the value is an undefined
+ * @category is
  * @example
  * ```ts
  * import { isUndefined } from '@ryanuo/utils'
@@ -98,6 +104,7 @@ export const isUndefined = (val: any): val is undefined => toString(val) === '[o
 
 /**
  * Checks if the value is an null
+ * @category is
  * @example
  * ```ts
  * import { isNull } from '@ryanuo/utils'
@@ -111,6 +118,7 @@ export const isNull = (val: any): val is null => toString(val) === '[object Null
 
 /**
  * Checks if the value is an regexp
+ * @category is
  * @example
  * ```ts
  * import { isRegExp } from '@ryanuo/utils'
@@ -124,6 +132,7 @@ export const isRegExp = (val: any): val is RegExp => toString(val) === '[object 
 
 /**
  * Checks if the value is an date
+ * @category is
  * @example
  * ```ts
  * import { isDate } from '@ryanuo/utils'
@@ -138,6 +147,7 @@ export const isDate = (val: any): val is Date => toString(val) === '[object Date
 
 /**
  * Checks if the current environment is a browser
+ * @category is
  * @example
  * ```ts
  * import { isBrowser } from '@ryanuo/utils'

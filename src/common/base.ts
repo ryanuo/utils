@@ -1,5 +1,6 @@
 /**
  * to string type of value [Object.prototype.toString]
+ * @category type
  * @example
  * ```ts
  * import { toString } from '@ryanuo/utils'
@@ -12,6 +13,7 @@ export const toString = (v: any) => Object.prototype.toString.call(v)
 
 /**
  * Get the type name of the value
+ * @category type
  * @example
  * ```ts
  * import { getTypeName } from '@ryanuo/utils'
@@ -30,6 +32,7 @@ export function getTypeName(v: any) {
 
 /**
  * Convert a number to a fixed value with specified decimal places.
+ * @category type
  * @example
  * ```ts
  * import { numberToFixed } from '@ryanuo/utils'
@@ -49,4 +52,37 @@ export function numberToFixed(num: number, fixed: number = 4) {
   // Use the toFixed method of the Number object to convert the input number to a string representation with the specified number of decimal places,
   // then convert it back to a number type and return it.
   return Number(num.toFixed(fixed))
+}
+
+/**
+ * 安全的深拷贝（处理循环引用）
+ * @category type
+ * @example
+ * ```ts
+ * import { deepClone } from '@ryanuo/utils'
+ * const obj = { a: 1, b: { c: 2 } }
+ * const cloneObj = deepClone(obj)
+ * console.log(cloneObj) // { a: 1, b: { c: 2 } }
+ * ```
+ * @param obj 源对象
+ */
+export function deepClone<T>(obj: T): T {
+  if (obj === null || typeof obj !== 'object')
+    return obj
+
+  if (obj instanceof Date)
+    return new Date(obj.getTime()) as unknown as T
+
+  if (obj instanceof RegExp)
+    return new RegExp(obj.source, obj.flags) as unknown as T
+
+  if (Array.isArray(obj))
+    return obj.map(item => deepClone(item)) as unknown as T
+
+  const clone = {} as T
+  for (const key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key))
+      clone[key] = deepClone(obj[key])
+  }
+  return clone
 }

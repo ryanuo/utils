@@ -2,6 +2,7 @@ import qs from 'query-string'
 import { isEmptyObject } from '../common'
 /**
  * Parse URL query parameters
+ * @category Url
  * @example
  * ```ts
  * import { getUrlParams } from '@ryanuo/utils'
@@ -20,13 +21,14 @@ export function getUrlParams(url: string = window.location.search): Record<strin
 
 /**
  * Convert an object to URL parameters
+ * @category Url
  * @example
  * ```ts
  * import { getUrlParamsString } from '@ryanuo/utils'
  * getUrlParamsString({ a: 1, b: 2 }) // '?a=1&b=2'
  * getUrlParamsString({ a: 1, b: 2 }, 'https://www.example.com')
  *```
- * @param params - The object to convert
+ * @param obj - The object to convert
  * @param url - The URL to which parameters will be added, defaults to the current page URL
  */
 export function getUrlParamsString(obj: Record<string, string>, url?: string): string {

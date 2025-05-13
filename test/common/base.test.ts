@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { getTypeName, numberToFixed, toString } from '../../src/common/base'
+import { deepClone, getTypeName, numberToFixed, toString } from '../../src/common/base'
 
 describe('getTypeName', () => {
   it('should return "object" for plain objects', () => {
@@ -126,5 +126,43 @@ describe('numberToFixed', () => {
   // 支持负数
   it('should handle negative numbers correctly', () => {
     expect(numberToFixed(-1.23456, 3)).toBe(-1.235)
+  })
+})
+
+describe('deepClone', () => {
+  it('should clone a simple object', () => {
+    const obj = { a: 1, b: { c: 2 } }
+    const clonedObj = deepClone(obj)
+    expect(clonedObj).toEqual(obj)
+    expect(clonedObj).not.toBe(obj) // 确保不是同一个引用
+  })
+
+  it('should clone arrays', () => {
+    const arr = [1, [2, 3], 4]
+    const clonedArr = deepClone(arr)
+    expect(clonedArr).toEqual(arr)
+    expect(clonedArr[1]).not.toBe(arr[1]) // 检查嵌套数组是否也被克隆
+  })
+
+  it('should handle special types like Date and RegExp', () => {
+    const date = new Date()
+    const regExp = /test/g
+    const obj = { date, regExp }
+
+    const clonedObj = deepClone(obj)
+    expect(clonedObj.date.getTime()).toBe(date.getTime())
+    expect(clonedObj.regExp.source).toBe(regExp.source)
+    expect(clonedObj.regExp.flags).toBe(regExp.flags)
+  })
+
+  it('should not affect functions or undefined values', () => {
+    // eslint-disable-next-line no-console
+    const func = () => console.log('test')
+    const undef = undefined
+    const obj = { func, undef }
+
+    const clonedObj = deepClone(obj)
+    expect(clonedObj.func).toBe(func) // 函数应该是浅拷贝
+    expect(clonedObj.undef).toBe(undef) // undefined 应保持不变
   })
 })

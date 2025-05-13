@@ -1,7 +1,7 @@
 import { safeJSONParse } from '../common'
 
 /**
- * @category safeStorage
+ * @category SafeStorage
  */
 interface StorageOptions {
   /**
@@ -17,7 +17,7 @@ interface StorageOptions {
 }
 
 /**
- * @category safeStorage
+ * @category SafeStorage
  */
 export interface SafeStorage {
   /**
@@ -96,7 +96,7 @@ function checkExpiration(item: any) {
  * // Clear sessionStorag
  * safeStorage.clear({ storage: 'session' })
  * ```
- * @category safeStorage
+ * @category SafeStorage
  */
 const safeStorage: SafeStorage = {
   get<T>(key: string, options: StorageOptions = {}): T | null {

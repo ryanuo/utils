@@ -17,13 +17,16 @@ export function getUuid() {
   })
 }
 
-type Curry<F extends (...args: any[]) => any> =
+/**
+ * @ignore
+ */
+export type Curry<F extends (...args: any[]) => any> =
   F extends (...args: infer A) => infer R
     ? A extends []
       ? R
       : A extends [infer First, ...infer Rest]
         ? ((arg: First) => Curry<(...args: Rest) => R>) &
-        ((...args: A) => R) // 添加直接调用签名
+        ((...args: A) => R) // Adding direct invocation signature
         : R
     : never
 /**
