@@ -8,25 +8,25 @@
 
 ## Overview
 
-`@ryanuo/utils` 是一个功能强大的工具库，提供多种实用工具函数，涵盖算法、浏览器操作、网络请求等多个领域，旨在提升开发效率。
-- **AI 模块**: 提供与人工智能相关的工具函数，助力 AI 开发。
-- **算法模块**: 包含常用算法的实现，方便快速集成。
-- **浏览器模块**: 提供浏览器环境下的工具函数，简化 DOM 操作和事件处理。
-- **Node.js 模块**: 专为 Node.js 环境设计的工具函数，提升开发效率。
-- **财务模块**: 包含与财务计算相关的工具函数，适用于金融场景。
-- **图形模块**: 提供图形处理相关的工具函数，适合图像和图形开发。
-- **网络模块**: 包含网络请求和数据处理的工具函数，简化网络操作。
-- **通用模块**: 提供常用的基础工具函数，适用于各种场景。
+`@ryanuo/utils` is a powerful utility library that provides a variety of practical helper functions across multiple domains such as algorithms, browser operations, network requests, and more, aiming to boost development efficiency.
+- **AI Module**: Provides utility functions related to artificial intelligence to aid AI development.
+- **Algorithm Module**: Contains implementations of commonly used algorithms for quick integration.
+- **Browser Module**: Offers utility functions for browser environments to simplify DOM manipulation and event handling.
+- **Node.js Module**: Specifically designed utility functions for Node.js environment to enhance productivity.
+- **Finance Module**: Includes utility functions relevant to financial calculations suitable for finance-related scenarios.
+- **Graphics Module**: Provides utility functions related to graphics processing ideal for image and graphic development.
+- **Network Module**: Contains utility functions for network requests and data processing to streamline network operations.
+- **Common Module**: Provides general-purpose foundational utility functions applicable in various scenarios.
 
 ## Installation
 
-使用 npm 安装：
+Install using pnpm:
 
 ```bash
-npm install @ryanuo/utils
+pnpm install @ryanuo/utils
 ```
 
-或者使用 yarn：
+Install using yarn:
 
 ```bash
 yarn add @ryanuo/utils
@@ -34,18 +34,18 @@ yarn add @ryanuo/utils
 
 ## Available Utilities
 
-以下是工具库中提供的模块分类：
+Below are the module categories available in the utility library:
 <!-- auto utils start -->
 | Type | Function List |
 |------|----------------|
-| <a href="https://utils.ryanuo.cc/api/ai/" target="_blank">Ai</a> | <a href="https://utils.ryanuo.cc/api/ai/variables/test.html" target="_blank">test()</a> |
-| <a href="https://utils.ryanuo.cc/api/algorithm/" target="_blank">Algorithm</a> | <a href="https://utils.ryanuo.cc/api/algorithm/variables/test.html" target="_blank">test()</a> |
-| <a href="https://utils.ryanuo.cc/api/browser/" target="_blank">Browser</a> | <a href="https://utils.ryanuo.cc/api/browser/functions/getUrlParams.html" target="_blank">getUrlParams()</a>；<a href="https://utils.ryanuo.cc/api/browser/functions/getUrlParamsString.html" target="_blank">getUrlParamsString()</a>；<a href="https://utils.ryanuo.cc/api/browser/functions/manageClasses.html" target="_blank">manageClasses()</a>；<a href="https://utils.ryanuo.cc/api/browser/functions/onceEventListener.html" target="_blank">onceEventListener()</a>；<a href="https://utils.ryanuo.cc/api/browser/variables/safeStorage.html" target="_blank">safeStorage()</a> |
-| <a href="https://utils.ryanuo.cc/api/common/" target="_blank">Common</a> | <a href="https://utils.ryanuo.cc/api/common/functions/curry.html" target="_blank">curry()</a>；<a href="https://utils.ryanuo.cc/api/common/functions/getTypeName.html" target="_blank">getTypeName()</a>；<a href="https://utils.ryanuo.cc/api/common/functions/getUuid.html" target="_blank">getUuid()</a>；<a href="https://utils.ryanuo.cc/api/common/functions/isBoolean.html" target="_blank">isBoolean()</a>；<a href="https://utils.ryanuo.cc/api/common/functions/isBrowser.html" target="_blank">isBrowser()</a>；<a href="https://utils.ryanuo.cc/api/common/functions/isDate.html" target="_blank">isDate()</a>；<a href="https://utils.ryanuo.cc/api/common/functions/isEmptyObject.html" target="_blank">isEmptyObject()</a>；<a href="https://utils.ryanuo.cc/api/common/functions/isFunction.html" target="_blank">isFunction()</a>；<a href="https://utils.ryanuo.cc/api/common/functions/isNull.html" target="_blank">isNull()</a>；<a href="https://utils.ryanuo.cc/api/common/functions/isNumber.html" target="_blank">isNumber()</a>；<a href="https://utils.ryanuo.cc/api/common/functions/isObject.html" target="_blank">isObject()</a>；<a href="https://utils.ryanuo.cc/api/common/functions/isRegExp.html" target="_blank">isRegExp()</a>；<a href="https://utils.ryanuo.cc/api/common/functions/isString.html" target="_blank">isString()</a>；<a href="https://utils.ryanuo.cc/api/common/functions/isUndefined.html" target="_blank">isUndefined()</a>；<a href="https://utils.ryanuo.cc/api/common/functions/numberToFixed.html" target="_blank">numberToFixed()</a>；<a href="https://utils.ryanuo.cc/api/common/functions/safeJSONParse.html" target="_blank">safeJSONParse()</a>；<a href="https://utils.ryanuo.cc/api/common/functions/toString.html" target="_blank">toString()</a> |
-| <a href="https://utils.ryanuo.cc/api/finance/" target="_blank">Finance</a> | <a href="https://utils.ryanuo.cc/api/finance/variables/test.html" target="_blank">test()</a> |
-| <a href="https://utils.ryanuo.cc/api/graphics/" target="_blank">Graphics</a> | <a href="https://utils.ryanuo.cc/api/graphics/variables/test.html" target="_blank">test()</a> |
-| <a href="https://utils.ryanuo.cc/api/network/" target="_blank">Network</a> | <a href="https://utils.ryanuo.cc/api/network/variables/test.html" target="_blank">test()</a> |
-| <a href="https://utils.ryanuo.cc/api/node/" target="_blank">Node</a> | <a href="https://utils.ryanuo.cc/api/node/variables/test.html" target="_blank">test()</a> |
+| [Ai](https://utils.ryanuo.cc/api/ai/) | [test()](https://utils.ryanuo.cc/api/ai/variables/test.html) |
+| [Algorithm](https://utils.ryanuo.cc/api/algorithm/) | [test()](https://utils.ryanuo.cc/api/algorithm/variables/test.html) |
+| [Browser](https://utils.ryanuo.cc/api/browser/) | [getUrlParams()](https://utils.ryanuo.cc/api/browser/functions/getUrlParams.html)；[getUrlParamsString()](https://utils.ryanuo.cc/api/browser/functions/getUrlParamsString.html)；[manageClasses()](https://utils.ryanuo.cc/api/browser/functions/manageClasses.html)；[onceEventListener()](https://utils.ryanuo.cc/api/browser/functions/onceEventListener.html)；[safeStorage()](https://utils.ryanuo.cc/api/browser/variables/safeStorage.html) |
+| [Common](https://utils.ryanuo.cc/api/common/) | [curry()](https://utils.ryanuo.cc/api/common/functions/curry.html)；[getTypeName()](https://utils.ryanuo.cc/api/common/functions/getTypeName.html)；[getUuid()](https://utils.ryanuo.cc/api/common/functions/getUuid.html)；[isBoolean()](https://utils.ryanuo.cc/api/common/functions/isBoolean.html)；[isBrowser()](https://utils.ryanuo.cc/api/common/functions/isBrowser.html)；[isDate()](https://utils.ryanuo.cc/api/common/functions/isDate.html)；[isEmptyObject()](https://utils.ryanuo.cc/api/common/functions/isEmptyObject.html)；[isFunction()](https://utils.ryanuo.cc/api/common/functions/isFunction.html)；[isNull()](https://utils.ryanuo.cc/api/common/functions/isNull.html)；[isNumber()](https://utils.ryanuo.cc/api/common/functions/isNumber.html)；[isObject()](https://utils.ryanuo.cc/api/common/functions/isObject.html)；[isRegExp()](https://utils.ryanuo.cc/api/common/functions/isRegExp.html)；[isString()](https://utils.ryanuo.cc/api/common/functions/isString.html)；[isUndefined()](https://utils.ryanuo.cc/api/common/functions/isUndefined.html)；[numberToFixed()](https://utils.ryanuo.cc/api/common/functions/numberToFixed.html)；[safeJSONParse()](https://utils.ryanuo.cc/api/common/functions/safeJSONParse.html)；[toString()](https://utils.ryanuo.cc/api/common/functions/toString.html) |
+| [Finance](https://utils.ryanuo.cc/api/finance/) | [test()](https://utils.ryanuo.cc/api/finance/variables/test.html) |
+| [Graphics](https://utils.ryanuo.cc/api/graphics/) | [test()](https://utils.ryanuo.cc/api/graphics/variables/test.html) |
+| [Network](https://utils.ryanuo.cc/api/network/) | [test()](https://utils.ryanuo.cc/api/network/variables/test.html) |
+| [Node](https://utils.ryanuo.cc/api/node/) | [test()](https://utils.ryanuo.cc/api/node/variables/test.html) |
 <!-- auto utils end -->
 
 ## License

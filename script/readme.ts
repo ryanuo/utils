@@ -15,7 +15,7 @@ function linkElement(text: string, link: string, isFunction?: boolean): string {
   if (isFunction && !/^[A-Z]/.test(text))
     text = `${text}()`
 
-  return `<a href="https://utils.ryanuo.cc${link}" target="_blank">${text}</a>`
+  return `[${text}](https://utils.ryanuo.cc${link})`
 }
 
 function generateMarkdownTable(exports: any[]): string {
