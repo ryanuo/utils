@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { getTypeName, numberToFixed, toString } from '../../src/common/base'
 
 describe('getTypeName', () => {

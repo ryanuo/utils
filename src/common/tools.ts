@@ -73,3 +73,90 @@ export function safeJSONParse(json: string) {
     return null
   }
 }
+
+/**
+ * Function debouncing
+ * A debouncing function is used to limit the frequency of executing a function within a specified time frame, preventing it from being called too frequently.
+ * If the function is called again within the specified interval, the previous call will be canceled and the timer will reset.
+ * @example
+ * ```ts
+ * import { debounce } from '@ryanuo/utils'
+ * const debouncedFn = debounce(() => {
+ *   console.log('Debounced function executed')
+ * })
+ * debouncedFn()
+ * ```
+ * @param fn The function to be debounced.
+ * @param delay The delay in milliseconds within which repeated calls to the function will reset the timer.
+ * @param immediate A boolean indicating whether the function should execute immediately on the first call. If set to true, the function executes at the start of the wait period; if false, it executes after the wait time following the last call.
+ * @returns Returns a new debounced function.
+ */
+export function debounce<T extends (...args: any[]) => any>(
+  fn: T,
+  delay: number,
+  immediate: boolean = false,
+): (...args: Parameters<T>) => void {
+  // Define a variable to store the ID of setTimeout
+  let timer: number | null = null
+
+  // Return a new function that processes calls to the original function according to debouncing logic
+  return (...args: Parameters<T>) => {
+    // If the timer variable is not null, clear the existing setTimeout to recalculate the interval
+    if (timer !== null)
+      window.clearTimeout(timer)
+
+    // If the immediate parameter is set to true and the timer variable is null, execute the original function immediately
+    if (immediate && timer === null)
+      fn(...args)
+
+    // Set a new setTimeout. If the function is not called again within the specified interval, execute the original function
+    timer = window.setTimeout(() => {
+      // If the immediate parameter is not set to true, execute the original function after the waiting period ends
+      if (!immediate)
+        fn(...args)
+
+      // After execution, reset the timer variable to null so that the interval can be recalculated on the next call
+      timer = null
+    }, delay)
+  }
+}
+
+/**
+ * Creates a throttled function that only executes the original function at most once per `delay` milliseconds.
+ * If `immediate` is true, the original function will be executed immediately upon the first call within the `delay` period.
+ *
+ * @param fn The original function to be throttled.
+ * @param delay The minimum interval in milliseconds between executions of the original function.
+ * @param immediate Whether to execute the original function immediately upon the first call within the `delay` period. Defaults to true.
+ * @returns Returns a new throttled function.
+ */
+export function throttle<T extends (...args: any[]) => any>(
+  fn: T,
+  delay: number,
+  immediate: boolean = true,
+): (...args: Parameters<T>) => void {
+  let lastExecTime = 0
+  let timer: number | null = null
+
+  return (...args: Parameters<T>) => {
+    const now = Date.now()
+    const timeSinceLastExec = now - lastExecTime
+
+    const execute = () => {
+      fn(...args)
+      lastExecTime = now
+    }
+
+    if (immediate && timeSinceLastExec >= delay) {
+      execute()
+    }
+    else if (timer === null) {
+      timer = window.setTimeout(() => {
+        if (!immediate || timeSinceLastExec < delay)
+          execute()
+
+        timer = null
+      }, immediate ? delay - timeSinceLastExec : delay)
+    }
+  }
+}
