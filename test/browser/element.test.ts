@@ -2,7 +2,7 @@
  * @vitest-environment happy-dom
  */
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { isMobile, manageClasses, onceEventListener } from '../../src/browser/element'
+import { copyToClipboard, isMobile, manageClasses, onceEventListener } from '../../src/browser/element'
 
 describe('manageClasses()', () => {
   let el: HTMLElement
@@ -112,5 +112,38 @@ describe('isMobile', () => {
       configurable: true,
     })
     expect(isMobile()).toBe(false)
+  })
+})
+
+describe('copyToClipboard', () => {
+  beforeEach(() => {
+    vi.restoreAllMocks()
+    document.body.innerHTML = ''
+  })
+
+  it('should successfully copy text using clipboard API when available', async () => {
+    const mockWriteText = vi.fn().mockResolvedValue(undefined)
+    Object.defineProperty(navigator, 'clipboard', {
+      value: {
+        writeText: mockWriteText,
+      },
+      writable: true,
+      configurable: true,
+    })
+
+    const result = await copyToClipboard('Hello, world!')
+    expect(mockWriteText).toHaveBeenCalledWith('Hello, world!')
+    expect(result).toBe(true)
+  })
+
+  it('should return false if navigator.clipboard is not available', async () => {
+    Object.defineProperty(navigator, 'clipboard', {
+      value: undefined,
+      writable: true,
+      configurable: true,
+    })
+
+    const result = await copyToClipboard('Test text')
+    expect(result).toBe(false)
   })
 })

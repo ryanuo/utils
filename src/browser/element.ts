@@ -65,3 +65,29 @@ export function isMobile(): boolean {
     navigator.userAgent,
   )
 }
+
+/**
+ * Copy text to clipboard
+ * @param text The text to be copied.
+ * @returns A boolean indicating success or failure of the operation.
+ */
+export async function copyToClipboard(text: string): Promise<boolean> {
+  try {
+    await navigator.clipboard.writeText(text)
+    return true
+  }
+  catch {
+    // Fallback for older browsers
+    const textarea = document.createElement('textarea')
+    textarea.value = text
+    document.body.appendChild(textarea)
+    textarea.select()
+    if (!document?.execCommand)
+      return false
+
+    // Mdn: https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand
+    const result = document?.execCommand('copy')
+    document.body.removeChild(textarea)
+    return result
+  }
+}

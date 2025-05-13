@@ -6,6 +6,7 @@
 
 | Function | Description |
 | ------ | ------ |
+| [copyToClipboard](functions/copyToClipboard.md) | Copy text to clipboard |
 | [getUrlParams](functions/getUrlParams.md) | Parse URL query parameters |
 | [getUrlParamsString](functions/getUrlParamsString.md) | Convert an object to URL parameters |
 | [isMobile](functions/isMobile.md) | Check if the user is visiting via a mobile device. |
