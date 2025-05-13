@@ -1,7 +1,7 @@
 {
   "name": "@ryanuo/utils",
   "type": "module",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publishConfig": {
     "access": "public"
   },
@@ -10,12 +10,12 @@
   "author": "ryanuo <ryanuo@aliyun.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/ryanuo",
-  "homepage": "https://github.com/ryanuo/@ryanuo/utils#readme",
+  "homepage": "https://github.com/ryanuo/utils#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryanuo/@ryanuo/utils.git"
+    "url": "git+https://github.com/ryanuo/utils.git"
   },
-  "bugs": "https://github.com/ryanuo/@ryanuo/utils/issues",
+  "bugs": "https://github.com/ryanuo/utils/issues",
   "keywords": [],
   "sideEffects": false,
   "exports": {
