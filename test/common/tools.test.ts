@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { curry, getUuid } from '../../src/common/tools'
+import { getUuid } from '../../src'
+import { curry } from '../../src/common/tools'
 
 describe('getUuid()', () => {
   let originalRandom: () => number

@@ -57,6 +57,7 @@
     "bumpp": "catalog:dev",
     "eslint": "catalog:dev",
     "esno": "catalog:dev",
+    "happy-dom": "catalog:test",
     "lint-staged": "catalog:dev",
     "simple-git-hooks": "catalog:dev",
     "typescript": "catalog:dev",
