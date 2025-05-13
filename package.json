@@ -59,7 +59,7 @@
     "esno": "catalog:dev",
     "happy-dom": "catalog:test",
     "lint-staged": "catalog:dev",
-    "query-string": "^9.1.2",
+    "query-string": "catalog:dev",
     "simple-git-hooks": "catalog:dev",
     "typescript": "catalog:dev",
     "unbuild": "catalog:dev",
