@@ -13,3 +13,8 @@ export * from './browser/storage'
 export * from './browser/url'
 
 export * from './algorithm'
+
+/**
+ * @module node
+ */
+export * from './node/log'

@@ -6,4 +6,4 @@
 
 | Variable | Description |
 | ------ | ------ |
-| [test](variables/test.md) | - |
+| [logger](variables/logger.md) | 彩色控制台输出 |

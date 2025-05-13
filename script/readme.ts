@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url'
 import { dirname } from 'node:path'
 import typedocSidebar from '../docs/api/typedoc-sidebar.json'
 import { transDocsJson } from '../docs/.vitepress/utils'
+import { logger } from '../src'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -56,8 +57,8 @@ async function main() {
   const updatedReadme = updateReadme(readmeContent, markdownTable)
 
   fs.writeFileSync(readmePath, updatedReadme, 'utf-8')
-  // eslint-disable-next-line no-console
-  console.log('README.md updated successfully.')
+
+  logger.green('README.md updated successfully.')
 }
 
 main().catch(console.error)
