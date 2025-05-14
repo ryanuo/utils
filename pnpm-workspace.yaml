@@ -28,3 +28,4 @@ catalogs:
 
   build:
     query-string: ^9.1.2
+    decimal.js: ^10.5.0

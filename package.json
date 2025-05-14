@@ -53,6 +53,7 @@
     "readme": "esno script/readme.ts"
   },
   "dependencies": {
+    "decimal.js": "catalog:build",
     "query-string": "catalog:build"
   },
   "devDependencies": {
