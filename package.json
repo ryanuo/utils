@@ -1,7 +1,7 @@
 {
   "name": "@ryanuo/utils",
   "type": "module",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "publishConfig": {
     "access": "public"
   },
@@ -44,7 +44,7 @@
     "dev": "unbuild --stub",
     "lint": "eslint .",
     "prepublishOnly": "pnpm run build",
-    "release": "bumpp && npm publish",
+    "release": "bumpp && pnpm publish",
     "start": "esno src/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
