@@ -1,5 +1,5 @@
 import { access, mkdir, readdir, rm, stat } from 'node:fs/promises' // 根据实际情况调整导入
-import { dirname, join, normalize } from 'node:path'
+import { dirname, join } from 'node:path'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { mkdirp, rmrf } from '../../src/node/path'
 
