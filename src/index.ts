@@ -19,3 +19,9 @@ export * from './algorithm'
  */
 export * from './node/log'
 export * from './node/path'
+
+/**
+ * @module finance
+ */
+export * from './finance/calculator'
+export * from './finance/amount'
