@@ -103,12 +103,15 @@ export function compare(
  * @category Calculator
  * @param part 部分值
  * @param total 总值
- * @param decimalPlaces 小数位数
+ * @param {object} [options] - 配置选项
+ * @param {number} [options.decimalPlaces] - 小数位数
+ * @param {boolean} [options.isSymbol] - 是否返回百分号
+ * @returns 百分比值
  */
 export function calculatePercentage(
   part: number | string,
   total: number | string,
-  option?: {
+  options?: {
     decimalPlaces?: number
     isSymbol?: boolean
   },
@@ -116,7 +119,7 @@ export function calculatePercentage(
   if (Number(total) === 0)
     return 'NaN'
 
-  const { decimalPlaces = 2, isSymbol = false } = option || {}
+  const { decimalPlaces = 2, isSymbol = false } = options || {}
 
   if (isSymbol) {
     return `${preciseDiv(part, total)
@@ -193,8 +196,8 @@ export class CalculatorChain {
 
   /**
    * round
-   * @param num 数字或字符串
-   * @returns
+   * @param decimalPlaces 数字或字符串
+   * @returns Decimal
    */
   round(decimalPlaces: number = 2): Decimal {
     return this.value.toDecimalPlaces(decimalPlaces)
