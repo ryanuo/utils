@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { fetchWithTimeout } from '../../src/network/http'
+import { fetchWithTimeout, parallelRequests } from '../../src/network/http'
 
 // Mocking global.fetch
 vi.mock('node-fetch', () => ({
@@ -54,5 +54,46 @@ describe('fetchWithTimeout', () => {
         signal: expect.any(AbortSignal),
       }),
     )
+  })
+})
+
+/**
+ * Mocks a promise-returning function that resolves after a delay.
+ * @param value The value to resolve the promise with.
+ * @param delay The time in milliseconds before the promise resolves.
+ */
+function createDelayedPromise<T>(value: T, delay: number = 0): () => Promise<T> {
+  return () => new Promise(resolve => setTimeout(() => resolve(value), delay))
+}
+
+describe('parallelRequests', () => {
+  it('should execute requests sequentially when concurrency is 1', async () => {
+    const mockRequests = [
+      createDelayedPromise('first', 100),
+      createDelayedPromise('second', 50),
+      createDelayedPromise('third', 200),
+    ]
+
+    const results = await parallelRequests(mockRequests, 1)
+
+    expect(results).toEqual(['first', 'second', 'third'])
+  })
+
+  it('should execute requests concurrently up to the specified limit', async () => {
+    // Arrange mocks where the first request takes the longest,
+    // demonstrating concurrent execution.
+    const mockRequests = [
+      createDelayedPromise('last', 300),
+      createDelayedPromise('first', 100),
+      createDelayedPromise('second', 200),
+    ]
+
+    const startTime = Date.now()
+    const results = await parallelRequests(mockRequests, 2)
+    const duration = Date.now() - startTime
+
+    // Ensure that it took less than if they were run sequentially
+    expect(duration).toBeLessThan(600) // Total sequential time would be 600ms
+    expect(results).toEqual(['first', 'last', 'second'])
   })
 })
