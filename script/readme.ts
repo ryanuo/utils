@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 import { dirname } from 'node:path'
 import typedocSidebar from '../docs/api/typedoc-sidebar.json'
 import { transDocsJson } from '../docs/.vitepress/utils'
-import { logger } from '../src'
+import { logger } from '../src/node'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
