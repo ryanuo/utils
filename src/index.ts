@@ -30,3 +30,8 @@ export * from './finance/amount'
  * @module graphics
  */
 export * from './graphics/color'
+
+/**
+ * @module network
+ */
+export * from './network/http'
