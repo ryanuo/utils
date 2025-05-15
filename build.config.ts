@@ -6,8 +6,16 @@ export default defineBuildConfig({
     './src/index',
     {
       builder: 'mkdist',
-      input: './src/',
-      outDir: './dist',
+      input: './src/node',
+      outDir: './dist/node',
+      format: 'esm',
+    },
+    {
+      builder: 'mkdist',
+      input: './src/node',
+      outDir: './dist/node',
+      format: 'cjs',
+      ext: 'cjs',
     },
   ],
   declaration: true,

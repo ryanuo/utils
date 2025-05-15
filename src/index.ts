@@ -14,11 +14,11 @@ export * from './browser/url'
 
 export * from './algorithm'
 
-/**
- * @module node
- */
-export * from './node/log'
-export * from './node/path'
+// /**
+//  * @module node 隔离打包到单独的文件
+//  */
+// export * from './node/log'
+// export * from './node/path'
 
 /**
  * @module finance
