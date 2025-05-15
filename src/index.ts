@@ -25,3 +25,8 @@ export * from './algorithm'
  */
 export * from './finance/calculator'
 export * from './finance/amount'
+
+/**
+ * @module graphics
+ */
+export * from './graphics/color'
