@@ -128,9 +128,13 @@ round
 
 `number` = `2`
 
+数字或字符串
+
 #### Returns
 
 `Decimal`
+
+Decimal
 
 ***
 

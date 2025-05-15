@@ -6,7 +6,7 @@
 function calculatePercentage(
    part, 
    total, 
-   option?): string;
+   options?): string;
 ```
 
 计算百分比
@@ -25,16 +25,24 @@ function calculatePercentage(
 
 `string` | `number`
 
-### option?
+### options?
+
+配置选项
 
 #### decimalPlaces?
 
 `number`
 
+小数位数
+
 #### isSymbol?
 
 `boolean`
 
+是否返回百分号
+
 ## Returns
 
 `string`
+
+百分比值
