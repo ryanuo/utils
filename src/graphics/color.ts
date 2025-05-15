@@ -1,5 +1,6 @@
 /**
  * HEX颜色转RGBA对象
+ * @category Color
  * @param hex #RRGGBB 或 #RRGGBBAA
  */
 function hexToRgba(hex: string): { r: number, g: number, b: number, a: number } {
@@ -14,6 +15,7 @@ function hexToRgba(hex: string): { r: number, g: number, b: number, a: number } 
 
 /**
  * RGBA对象转HEX
+ * @category Color
  */
 function rgbaToHex({ r, g, b, a = 1 }: { r: number, g: number, b: number, a?: number }): string {
   // 检查输入值是否有效
@@ -32,6 +34,7 @@ function rgbaToHex({ r, g, b, a = 1 }: { r: number, g: number, b: number, a?: nu
 
 /**
  * 线性颜色插值
+ * @category Color
  * @param color1 HEX颜色
  * @param color2 HEX颜色
  * @param t 插值系数 (0-1)

@@ -2,7 +2,7 @@
 
 # graphics
 
-## Functions
+## Color
 
 | Function | Description |
 | ------ | ------ |
