@@ -5,19 +5,19 @@
 <h1 align="center">@ryanuo/utils</h1>
 
 <div align="center">
-  <a href="https://npmjs.com/package/@ryanuo/utils">
+  <a href="https://npmjs.com/package/@ryanuo/utils" style="text-decoration: none;">
     <img src="https://img.shields.io/npm/v/@ryanuo/utils?style=flat&colorA=080f12&colorB=1fa669" alt="npm version">
   </a>
-  <a href="https://npmjs.com/package/@ryanuo/utils">
+  <a href="https://npmjs.com/package/@ryanuo/utils" style="text-decoration: none;">
     <img src="https://img.shields.io/npm/dm/@ryanuo/utils?style=flat&colorA=080f12&colorB=1fa669" alt="npm downloads">
   </a>
-  <a href="https://bundlephobia.com/result?p=@ryanuo/utils">
+  <a href="https://bundlephobia.com/result?p=@ryanuo/utils" style="text-decoration: none;">
     <img src="https://img.shields.io/bundlephobia/minzip/@ryanuo/utils?style=flat&colorA=080f12&colorB=1fa669&label=minzip" alt="bundle size">
   </a>
-  <a href="https://www.jsdocs.io/package/@ryanuo/utils">
+  <a href="https://www.jsdocs.io/package/@ryanuo/utils" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=080f12&colorB=1fa669" alt="JSDocs">
   </a>
-  <a href="https://github.com/ryanuo/utils/blob/main/LICENSE">
+  <a href="https://github.com/ryanuo/utils/blob/main/LICENSE" style="text-decoration: none;">
     <img src="https://img.shields.io/github/license/ryanuo/utils.svg?style=flat&colorA=080f12&colorB=1fa669" alt="License">
   </a>
 </div>
