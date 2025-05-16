@@ -83,4 +83,4 @@ Below are the module categories available in the utility library:
 
 ## License
 
-[MIT](./LICENSE) License © 2023-PRESENT [ryanuo](https://github.com/ryanuo)
+[MIT](https://github.com/ryanuo/utils/blob/main/LICENSE) License © 2023-PRESENT [ryanuo](https://github.com/ryanuo)
