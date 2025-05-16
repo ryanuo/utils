@@ -4,11 +4,23 @@
 
 <h1 align="center">@ryanuo/utils</h1>
 
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![bundle][bundle-src]][bundle-href]
-[![JSDocs][jsdocs-src]][jsdocs-href]
-[![License][license-src]][license-href]
+<div align="center">
+  <a href="https://npmjs.com/package/@ryanuo/utils">
+    <img src="https://img.shields.io/npm/v/@ryanuo/utils?style=flat&colorA=080f12&colorB=1fa669" alt="npm version">
+  </a>
+  <a href="https://npmjs.com/package/@ryanuo/utils">
+    <img src="https://img.shields.io/npm/dm/@ryanuo/utils?style=flat&colorA=080f12&colorB=1fa669" alt="npm downloads">
+  </a>
+  <a href="https://bundlephobia.com/result?p=@ryanuo/utils">
+    <img src="https://img.shields.io/bundlephobia/minzip/@ryanuo/utils?style=flat&colorA=080f12&colorB=1fa669&label=minzip" alt="bundle size">
+  </a>
+  <a href="https://www.jsdocs.io/package/@ryanuo/utils">
+    <img src="https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=080f12&colorB=1fa669" alt="JSDocs">
+  </a>
+  <a href="https://github.com/ryanuo/utils/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/ryanuo/utils.svg?style=flat&colorA=080f12&colorB=1fa669" alt="License">
+  </a>
+</div>
 
 ## Overview
 
@@ -72,16 +84,3 @@ Below are the module categories available in the utility library:
 ## License
 
 [MIT](./LICENSE) License © 2023-PRESENT [ryanuo](https://github.com/ryanuo)
-
-<!-- Badges -->
-
-[npm-version-src]: https://img.shields.io/npm/v/@ryanuo/utils?style=flat&colorA=080f12&colorB=1fa669
-[npm-version-href]: https://npmjs.com/package/@ryanuo/utils
-[npm-downloads-src]: https://img.shields.io/npm/dm/@ryanuo/utils?style=flat&colorA=080f12&colorB=1fa669
-[npm-downloads-href]: https://npmjs.com/package/@ryanuo/utils
-[bundle-src]: https://img.shields.io/bundlephobia/minzip/@ryanuo/utils?style=flat&colorA=080f12&colorB=1fa669&label=minzip
-[bundle-href]: https://bundlephobia.com/result?p=@ryanuo/utils
-[license-src]: https://img.shields.io/github/license/ryanuo/utils.svg?style=flat&colorA=080f12&colorB=1fa669
-[license-href]: https://github.com/ryanuo/utils/blob/main/LICENSE
-[jsdocs-src]: https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=080f12&colorB=1fa669
-[jsdocs-href]: https://www.jsdocs.io/package/@ryanuo/utils
