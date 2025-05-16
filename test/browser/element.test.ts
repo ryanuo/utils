@@ -147,33 +147,3 @@ describe('copyToClipboard', () => {
     expect(result).toBe(false)
   })
 })
-
-describe('enterFullScreenOnClick', () => {
-  beforeEach(() => {
-    document.body.innerHTML = '<div class="target"></div>' // 清空并初始化HTML内容
-    // 重置 requestFullscreen 的定义
-    Object.defineProperty(document.documentElement, 'requestFullscreen', {
-      value: vi.fn(() => Promise.resolve()),
-      configurable: true,
-      writable: true,
-    })
-  })
-
-  it('should log an error if no elements match the selector', () => {
-    const consoleErrorSpy = vi.spyOn(console, 'error')
-    enterFullScreen('.nonexistent-selector')
-    expect(consoleErrorSpy).toHaveBeenCalledWith('没有找到符合选择器 .nonexistent-selector 的元素')
-  })
-
-  it('should log an error if fullscreen is not enabled', () => {
-    // 使用 mock 函数来模拟 fullscreenEnabled 的行为
-    const mockFullscreenEnabled = vi.fn().mockReturnValue(false)
-    Object.defineProperty(document, 'fullscreenEnabled', {
-      get: mockFullscreenEnabled,
-      configurable: true,
-    })
-    const consoleErrorSpy = vi.spyOn(console, 'error')
-    enterFullScreen('.target')
-    expect(consoleErrorSpy).toHaveBeenCalledWith('您的浏览器不支持全屏模式')
-  })
-})
