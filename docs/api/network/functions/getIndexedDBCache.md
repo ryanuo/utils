@@ -17,9 +17,13 @@ function getIndexedDBCache(dbName, storeName): Promise<{
 
 `string`
 
+indexedDB 数据库名称
+
 ### storeName
 
 `string`
+
+缓存对象名称
 
 ## Returns
 
@@ -28,7 +32,7 @@ function getIndexedDBCache(dbName, storeName): Promise<{
   `set`: `Promise`\<`void`\>;
 \}\>
 
-Promise<{ get: (key: string) => Promise<any>, set: (key: string, value: any) => Promise<void> }>
+IndexedDB 缓存对象
 
 ## Example
 

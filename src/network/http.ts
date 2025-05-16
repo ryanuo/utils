@@ -107,9 +107,9 @@ async function getClientIP(): Promise<string> {
  * const users = await cache.get('users');
  * ```
  * @category Http
- * @param dbName
- * @param storeName
- * @returns Promise<{ get: (key: string) => Promise<any>, set: (key: string, value: any) => Promise<void> }>
+ * @param dbName indexedDB 数据库名称
+ * @param storeName 缓存对象名称
+ * @returns IndexedDB 缓存对象
  */
 async function getIndexedDBCache(dbName: string, storeName: string) {
   const openDB = (): Promise<IDBDatabase> => {
@@ -150,7 +150,7 @@ async function getIndexedDBCache(dbName: string, storeName: string) {
 /**
  * 检测网络连接状态
  * @category Http
- * @returns Promise<boolean> 是否在线
+ * @returns 是否在线
  */
 function checkNetworkStatus(): Promise<boolean> {
   return new Promise((resolve) => {
