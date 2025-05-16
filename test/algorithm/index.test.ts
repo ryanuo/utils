@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { binarySearch, bubbleSort, fibonacciDP, fibonacciRecursive, isPrime, quickSort } from '../../src/algorithm'
+import { binarySearch, bubbleSort, fibonacciDP, fibonacciRecursive, isPrime, quickSort } from '~/algorithm'
 
 describe('bubbleSort', () => {
   it('should sort an array correctly', () => {

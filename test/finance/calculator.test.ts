@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import Decimal from 'decimal.js'
-import { CalculatorChain, calculatePercentage, compare, preciseAdd, preciseDiv, preciseMul, preciseSub, roundTo } from '../../src/finance/calculator'
+import { CalculatorChain, calculatePercentage, compare, preciseAdd, preciseDiv, preciseMul, preciseSub, roundTo } from '~/finance/calculator'
 
 describe('preciseAdd', () => {
   it('should correctly add numbers', () => {

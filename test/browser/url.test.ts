@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { getUrlParams, getUrlParamsString } from '../../src/browser/url'
+import { getUrlParams, getUrlParamsString } from '~/browser/url'
 
 describe('getUrlParams', () => {
   describe('normal usage', () => {

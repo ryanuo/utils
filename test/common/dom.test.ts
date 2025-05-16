@@ -2,7 +2,7 @@
  * @vitest-environment happy-dom
  */
 import { describe, expect, it, vi } from 'vitest'
-import { debounce, throttle } from '../../src/common/tools'
+import { debounce, throttle } from '~/common/tools'
 
 describe('debounce', () => {
   // Use fake timers to control setTimeout and clearTimeout
