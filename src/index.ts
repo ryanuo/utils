@@ -12,6 +12,9 @@ export * from './browser/element'
 export * from './browser/storage'
 export * from './browser/url'
 
+/**
+ * @module algorithm
+ */
 export * from './algorithm'
 
 // /**
