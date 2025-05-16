@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { linearRegression, normalizeData, normalizeMinMax } from '~/ai/machine'
+import { linearRegression, normalizeData, normalizeMinMax } from '../../src/ai/machine'
 
 /**
  * normalizeData 测试

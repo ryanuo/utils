@@ -2,7 +2,7 @@
  * @vitest-environment happy-dom
  */
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { copyToClipboard, enterFullScreen, isMobile, manageClasses, onceEventListener } from '~/browser/element'
+import { copyToClipboard, enterFullScreen, isMobile, manageClasses, onceEventListener } from '../../src/browser/element'
 
 describe('manageClasses()', () => {
   let el: HTMLElement

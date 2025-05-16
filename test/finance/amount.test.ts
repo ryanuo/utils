@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { formatCurrency } from '~/finance/amount'
+import { formatCurrency } from '../../src/finance/amount'
 
 describe('formatCurrency', () => {
   it('should correctly format amount with default currency and locale', () => {

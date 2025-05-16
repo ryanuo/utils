@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { deepClone, getTypeName, numberToFixed, toString } from '~/common/base'
+import { deepClone, getTypeName, numberToFixed, toString } from '../../src/common/base'
 
 describe('getTypeName', () => {
   it('should return "object" for plain objects', () => {

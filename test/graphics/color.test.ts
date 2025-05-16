@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { hexToRgba, lerpColor, rgbaToHex } from '~/graphics/color'
+import { hexToRgba, lerpColor, rgbaToHex } from '../../src/graphics/color'
 
 describe('hexToRgba', () => {
   it('should correctly convert #RRGGBB to RGBA object with default alpha', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { dateFormat } from '~/common/date'
+import { dateFormat } from '../../src/common/date'
 
 describe('dateFormat', () => {
   const date = new Date(2022, 1, 5, 16, 44, 11, 123) // 注意：月份是从0开始计算的，所以1代表二月

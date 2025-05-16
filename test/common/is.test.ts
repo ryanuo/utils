@@ -11,7 +11,7 @@ import {
   isRegExp,
   isString,
   isUndefined,
-} from '~/common/is'
+} from '../../src/common/is'
 
 describe('isBoolean', () => {
   it('should return true for boolean values', () => {

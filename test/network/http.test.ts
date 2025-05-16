@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { fetchWithTimeout, parallelRequests } from '~/network/http'
+import { fetchWithTimeout, parallelRequests } from '../../src/network/http'
 
 // Mocking global.fetch
 vi.mock('node-fetch', () => ({

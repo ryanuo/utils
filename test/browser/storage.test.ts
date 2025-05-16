@@ -3,8 +3,8 @@
  */
 
 import { describe, expect, it } from 'vitest'
-import type { StorageOptions } from '~/browser/storage'
-import { safeStorage } from '~/browser/storage' // 请替换为你的实际模块路径
+import type { StorageOptions } from '../../src/browser/storage'
+import { safeStorage } from '../../src/browser/storage' // 请替换为你的实际模块路径
 
 describe('safeStorage', () => {
   const testKey = 'testKey'
