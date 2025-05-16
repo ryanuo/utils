@@ -42,6 +42,17 @@ Install using yarn:
 yarn add @ryanuo/utils
 ```
 
+## Usage
+
+```ts
+// Module to be used in both browser and Node environments
+import { /* shared utility functions */ } from '@ryanuo/utils'
+
+// Module to be used only in Node environment
+// Note: This module includes functionalities specifically designed for Node, such as file operations, network requests, etc.
+import { /* Node-specific utility functions */ } from '@ryanuo/utils/node'
+```
+
 ## Available Utilities
 
 Below are the module categories available in the utility library:
