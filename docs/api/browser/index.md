@@ -7,6 +7,7 @@
 | Function | Description |
 | ------ | ------ |
 | [copyToClipboard](functions/copyToClipboard.md) | Copy text to clipboard |
+| [enterFullScreen](functions/enterFullScreen.md) | Implement fullscreen effect upon clicking any element. |
 | [isMobile](functions/isMobile.md) | Check if the user is visiting via a mobile device. |
 | [manageClasses](functions/manageClasses.md) | 批量操作元素类名 |
 | [onceEventListener](functions/onceEventListener.md) | 只触发一次的事件监听 |

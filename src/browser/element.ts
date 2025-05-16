@@ -95,3 +95,45 @@ export async function copyToClipboard(text: string): Promise<boolean> {
     return result
   }
 }
+
+/**
+ * Implement fullscreen effect upon clicking any element.
+ * @category DOM
+ * @param selector Selector to target elements
+ * @param event Event to trigger fullscreen, default is 'click'
+ */
+export function enterFullScreen(selector: string, event: string = 'click') {
+  const elements = document.querySelectorAll(selector)
+
+  if (elements.length === 0) {
+    console.error(`No elements found for selector ${selector}`)
+    return
+  }
+
+  // Use fullscreenEnabled property to check if fullscreen is supported
+  if (!document.fullscreenEnabled) {
+    console.error('Your browser does not support fullscreen mode')
+    return
+  }
+
+  elements.forEach((element) => {
+    element.addEventListener(event, async () => {
+      try {
+        if (document.documentElement.requestFullscreen) {
+          await document.documentElement.requestFullscreen()
+        }
+        else if ('webkitRequestFullscreen' in document.documentElement) {
+          // Safari Browser
+          ;(document.documentElement as any).webkitRequestFullscreen()
+        }
+        else if ('msRequestFullscreen' in document.documentElement) {
+          // Old versions of IE/Edge
+          ;(document.documentElement as any).msRequestFullscreen()
+        }
+      }
+      catch (err) {
+        console.error('Failed to enter fullscreen:', err)
+      }
+    })
+  })
+}
