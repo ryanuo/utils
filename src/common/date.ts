@@ -14,7 +14,7 @@ import { isDate, isFunction } from './is'
  * <p>m：表示分钟数 (0 ~ 59)</p>
  * <p>s: 表示秒数 (0 ~ 59)</p>
  * <p>S: 表示毫秒数</p>
- * @Return 日期格式化后的string字符串
+ * @return 日期格式化后的string字符串
  */
 export function dateFormat(date: Date, fmt = 'YYYY-MM-dd'): string {
   if (!isDate(date))

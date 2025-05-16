@@ -5,3 +5,4 @@
 export * from './base'
 export * from './is'
 export * from './tools'
+export * from './date'

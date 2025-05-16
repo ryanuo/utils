@@ -4,6 +4,12 @@
 
 Common utilities and types for the project
 
+## Date
+
+| Function | Description |
+| ------ | ------ |
+| [dateFormat](functions/dateFormat.md) | 日期格式化 |
+
 ## Other
 
 | Function | Description |
