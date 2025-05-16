@@ -28,8 +28,8 @@ async function fetchWithTimeout(
 }
 
 /**
- * @category Http
  * 封装 GET/POST 请求（自动处理 JSON）
+ * @category Http
  */
 async function request<T = any>(
   method: 'GET' | 'POST' | 'PUT' | 'DELETE',

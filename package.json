@@ -16,7 +16,18 @@
     "url": "git+https://github.com/ryanuo/utils.git"
   },
   "bugs": "https://github.com/ryanuo/utils/issues",
-  "keywords": [],
+  "keywords": [
+    "ts-utils",
+    "utils",
+    "vitepress",
+    "AI",
+    "algorithms",
+    "browser",
+    "node",
+    "network",
+    "finance",
+    "graphics"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {

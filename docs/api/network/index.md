@@ -11,10 +11,4 @@
 | [getClientIP](functions/getClientIP.md) | 获取客户端的 IP 地址 |
 | [getIndexedDBCache](functions/getIndexedDBCache.md) | 获取 IndexedDB 缓存 |
 | [parallelRequests](functions/parallelRequests.md) | 控制并发数的请求队列 |
-
-## Http
-封装 GET/POST 请求（自动处理 JSON）
-
-| Function | Description |
-| ------ | ------ |
-| [request](functions/request.md) | - |
+| [request](functions/request.md) | 封装 GET/POST 请求（自动处理 JSON） |

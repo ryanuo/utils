@@ -19,7 +19,7 @@
 | [StorageOptions](interfaces/StorageOptions.md) | - |
 | [safeStorage](variables/safeStorage.md) | A simple storage wrapper that uses localStorage and sessionStorage. |
 
-## Url
+## URL
 
 | Function | Description |
 | ------ | ------ |

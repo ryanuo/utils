@@ -1,25 +1,53 @@
 import { defineConfig } from 'vitepress'
 import typedocSidebar from '../api/typedoc-sidebar.json'
+import { version } from '../../package.json'
 import { transDocsJson } from './utils'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: '@ryanuo/utils',
-  description: 'A VitePress Site',
+  description: 'A collection of useful utilities for web development.',
   head: [
+    ['link', { href: '/style.css', rel: 'stylesheet', type: 'text/css' }],
     ['link', { rel: 'icon', href: '/utils.svg' }],
   ],
   themeConfig: {
     nav: [{
+      text: 'Guide',
+      link: '/guide.html',
+    }, {
       text: 'API',
-      link: '/api/',
+      link: '/api.html',
+    }, {
+      text: `v${version}`,
+      items: [
+        {
+          text: 'Release Notes',
+          link: 'https://github.com/ryanuo/utils/releases',
+        },
+      ],
     }],
-    sidebar: transDocsJson(typedocSidebar),
+    sidebar: [
+      {
+        text: 'Functions',
+        items: transDocsJson(typedocSidebar),
+      },
+    ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ryanuo/utils' },
     ],
     search: {
       provider: 'local',
+    },
+    editLink: {
+      pattern: 'https://github.com/ryanuo/utils/edit/main/docs/:path',
+    },
+    lastUpdated: {
+      text: 'Last Updated',
+      formatOptions: {
+        dateStyle: 'short',
+        timeStyle: 'short',
+      },
     },
   },
 })

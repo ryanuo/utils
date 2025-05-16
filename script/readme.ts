@@ -57,8 +57,10 @@ async function main() {
   const updatedReadme = updateReadme(readmeContent, markdownTable)
 
   fs.writeFileSync(readmePath, updatedReadme, 'utf-8')
-
   logger.green('README.md updated successfully.')
+
+  fs.writeFileSync(path.resolve(__dirname, '../docs/guide.md'), updatedReadme, 'utf-8')
+  logger.green('Guide.md updated successfully.')
 }
 
 main().catch(console.error)

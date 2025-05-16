@@ -1,0 +1,12 @@
+._guide p:nth-of-type(2){
+  text-align: center;
+}
+
+._guide a{
+  display: inline-block;
+  margin-right: 5px;
+}
+
+._guide h1{
+  font-size: 1.5em;
+}

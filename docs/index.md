@@ -7,7 +7,10 @@ hero:
   tagline: 提供多种实用工具函数，涵盖算法、浏览器操作、网络请求等多个领域
   actions:
     - theme: brand
-      text: 查看 API 文档
+      text: 快速开始
+      link: /guide
+    - theme: alt
+      text: API 文档
       link: /api
     - theme: alt
       text: GitHub

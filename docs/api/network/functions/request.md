@@ -10,6 +10,8 @@ function request<T>(
 headers?): Promise<T>;
 ```
 
+封装 GET/POST 请求（自动处理 JSON）
+
 ## Type Parameters
 
 ### T

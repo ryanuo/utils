@@ -2,7 +2,7 @@ import qs from 'query-string'
 import { isEmptyObject } from '../common'
 /**
  * Parse URL query parameters
- * @category Url
+ * @category URL
  * @example
  * ```ts
  * import { getUrlParams } from '@ryanuo/utils'
@@ -21,7 +21,7 @@ export function getUrlParams(url: string = window.location.search): Record<strin
 
 /**
  * Convert an object to URL parameters
- * @category Url
+ * @category URL
  * @example
  * ```ts
  * import { getUrlParamsString } from '@ryanuo/utils'
