@@ -35,3 +35,8 @@ export * from './graphics/color'
  * @module network
  */
 export * from './network/http'
+
+/**
+ * @module ai
+ */
+export * from './ai/machine'
