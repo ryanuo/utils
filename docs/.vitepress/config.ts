@@ -1,18 +1,26 @@
-/* eslint-disable no-console */
-import path from 'node:path'
 import process from 'node:process'
 import dotenv from 'dotenv'
+import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
 import typedocSidebar from '../api/typedoc-sidebar.json'
 import { version } from '../../package.json'
 import { transDocsJson } from './utils'
 
-const dotenvFile = path.resolve(process.cwd(), '../.env')
-console.log(dotenvFile)
-const { VITE_ALGOLIA_APP_ID, VITE_ALGOLIA_API_KEY, VITE_ALGOLIA_INDEX_NAME } = dotenv.config({
-  path: dotenvFile,
-}).parsed as { [key: string]: string }
-console.log(VITE_ALGOLIA_APP_ID, VITE_ALGOLIA_API_KEY, VITE_ALGOLIA_INDEX_NAME)
+dotenv.config()
+
+function getSearchConfig(env: NodeJS.ProcessEnv): DefaultTheme.Config['search'] {
+  if (env.VITE_ALGOLIA_APP_ID && env.VITE_ALGOLIA_API_KEY && env.VITE_ALGOLIA_INDEX_NAME) {
+    return {
+      provider: 'algolia',
+      options: {
+        indexName: env.VITE_ALGOLIA_INDEX_NAME,
+        appId: env.VITE_ALGOLIA_APP_ID,
+        apiKey: env.VITE_ALGOLIA_API_KEY,
+      },
+    }
+  }
+}
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: '@ryanuo/utils',
@@ -46,15 +54,7 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ryanuo/utils' },
     ],
-    search: {
-      provider: 'algolia',
-      options: {
-        // https://crawler.algolia.com/admin/crawlers
-        appId: VITE_ALGOLIA_APP_ID,
-        apiKey: VITE_ALGOLIA_API_KEY,
-        indexName: VITE_ALGOLIA_INDEX_NAME,
-      },
-    },
+    search: getSearchConfig(process.env),
     editLink: {
       pattern: 'https://github.com/ryanuo/utils/edit/main/docs/:path',
     },
