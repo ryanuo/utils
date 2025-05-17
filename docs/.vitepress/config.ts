@@ -65,12 +65,10 @@ function getSearchConfig(env: NodeJS.ProcessEnv): DefaultTheme.Config['search'] 
 
   const hasAlgoliaConfig = Boolean(appId && apiKey && indexName)
   if (!hasAlgoliaConfig)
-    throw new Error('Missing Algolia config')
+    throw new Error('Missing Algolia config: please check your .env file, or https://crawler.algolia.com/admin/crawlers')
 
   const maskedApiKey
-   = process.env.NODE_ENV === 'development'
-     ? apiKey
-     : `${apiKey!.slice(0, 4)}...${apiKey!.slice(-4)}`
+   = `${apiKey!.slice(0, 4)}...${apiKey!.slice(-4)}`
   console.table({ appId, maskedApiKey, indexName })
 
   return {
