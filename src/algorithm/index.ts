@@ -1,4 +1,9 @@
 /**
+ * 封装通用或特定领域算法，解决计算、排序、加密等逻辑问题。
+ * @module algorithm
+ */
+
+/**
  * 冒泡排序（Bubble Sort）
  * @category Algorithm
  * @example

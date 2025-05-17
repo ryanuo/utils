@@ -2,6 +2,8 @@
 
 # algorithm
 
+封装通用或特定领域算法，解决计算、排序、加密等逻辑问题。
+
 ## Algorithm
 
 | Function | Description |

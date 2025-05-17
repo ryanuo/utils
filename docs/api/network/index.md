@@ -2,6 +2,8 @@
 
 # network
 
+管理网络通信，处理 HTTP、WebSocket 等协议的连接与数据传输
+
 ## Http
 
 | Function | Description |

@@ -2,6 +2,8 @@
 
 # browser
 
+处理浏览器环境下的交互、兼容性适配及扩展开发等需求。
+
 ## DOM
 
 | Function | Description |

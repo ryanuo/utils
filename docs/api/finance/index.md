@@ -2,6 +2,8 @@
 
 # finance
 
+实现金融业务逻辑，涵盖支付、账务、风险计算等场景。
+
 ## Amount
 
 | Function | Description |
