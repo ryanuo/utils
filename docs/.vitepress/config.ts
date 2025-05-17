@@ -1,9 +1,10 @@
+import process from 'dotenv'
 import { defineConfig } from 'vitepress'
 import typedocSidebar from '../api/typedoc-sidebar.json'
 import { version } from '../../package.json'
 import { transDocsJson } from './utils'
 
-const env = (import.meta as any).env
+const { VITE_ALGOLIA_APP_ID, VITE_ALGOLIA_API_KEY, VITE_ALGOLIA_INDEX_NAME } = process.configDotenv().parsed as { [key: string]: string }
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: '@ryanuo/utils',
@@ -41,9 +42,9 @@ export default defineConfig({
       provider: 'algolia',
       options: {
         // https://crawler.algolia.com/admin/crawlers
-        appId: env.VITE_ALGOLIA_APP_ID,
-        apiKey: env.VITE_ALGOLIA_API_KEY,
-        indexName: env.VITE_ALGOLIA_INDEX_NAME,
+        appId: VITE_ALGOLIA_APP_ID,
+        apiKey: VITE_ALGOLIA_API_KEY,
+        indexName: VITE_ALGOLIA_INDEX_NAME,
       },
     },
     editLink: {

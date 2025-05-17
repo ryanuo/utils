@@ -11,6 +11,7 @@
     "update": "pnpm run predocs:dev && cd ../ && pnpm run readme"
   },
   "devDependencies": {
+    "dotenv": "catalog:docs",
     "typedoc": "catalog:docs",
     "typedoc-plugin-markdown": "catalog:docs",
     "typedoc-vitepress-theme": "catalog:docs",
