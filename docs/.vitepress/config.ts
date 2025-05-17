@@ -1,10 +1,12 @@
+/* eslint-disable no-console */
 import process from 'dotenv'
 import { defineConfig } from 'vitepress'
 import typedocSidebar from '../api/typedoc-sidebar.json'
 import { version } from '../../package.json'
 import { transDocsJson } from './utils'
 
-const { VITE_ALGOLIA_APP_ID, VITE_ALGOLIA_API_KEY, VITE_ALGOLIA_INDEX_NAME } = process.configDotenv().parsed as { [key: string]: string }
+const { VITE_ALGOLIA_APP_ID, VITE_ALGOLIA_API_KEY, VITE_ALGOLIA_INDEX_NAME } = process.config().parsed as { [key: string]: string }
+console.log(VITE_ALGOLIA_APP_ID, VITE_ALGOLIA_API_KEY, VITE_ALGOLIA_INDEX_NAME)
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: '@ryanuo/utils',
