@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import process from 'node:process'
 import dotenv from 'dotenv'
 import type { DefaultTheme } from 'vitepress'
@@ -7,19 +8,6 @@ import { version } from '../../package.json'
 import { transDocsJson } from './utils'
 
 dotenv.config()
-
-function getSearchConfig(env: NodeJS.ProcessEnv): DefaultTheme.Config['search'] {
-  if (env.VITE_ALGOLIA_APP_ID && env.VITE_ALGOLIA_API_KEY && env.VITE_ALGOLIA_INDEX_NAME) {
-    return {
-      provider: 'algolia',
-      options: {
-        indexName: env.VITE_ALGOLIA_INDEX_NAME,
-        appId: env.VITE_ALGOLIA_APP_ID,
-        apiKey: env.VITE_ALGOLIA_API_KEY,
-      },
-    }
-  }
-}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -67,3 +55,26 @@ export default defineConfig({
     },
   },
 })
+
+function getSearchConfig(env: NodeJS.ProcessEnv): DefaultTheme.Config['search'] {
+  const {
+    VITE_ALGOLIA_APP_ID: appId,
+    VITE_ALGOLIA_API_KEY: apiKey,
+    VITE_ALGOLIA_INDEX_NAME: indexName,
+  } = env as any
+
+  const hasAlgoliaConfig = Boolean(appId && apiKey && indexName)
+  if (!hasAlgoliaConfig)
+    throw new Error('Missing Algolia config')
+
+  const maskedApiKey
+   = process.env.NODE_ENV === 'development'
+     ? apiKey
+     : `${apiKey!.slice(0, 4)}...${apiKey!.slice(-4)}`
+  console.table({ appId, maskedApiKey, indexName })
+
+  return {
+    provider: 'algolia',
+    options: { appId, apiKey, indexName },
+  }
+}
