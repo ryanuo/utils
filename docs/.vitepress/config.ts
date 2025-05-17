@@ -1,11 +1,17 @@
 /* eslint-disable no-console */
-import process from 'dotenv'
+import path from 'node:path'
+import process from 'node:process'
+import dotenv from 'dotenv'
 import { defineConfig } from 'vitepress'
 import typedocSidebar from '../api/typedoc-sidebar.json'
 import { version } from '../../package.json'
 import { transDocsJson } from './utils'
 
-const { VITE_ALGOLIA_APP_ID, VITE_ALGOLIA_API_KEY, VITE_ALGOLIA_INDEX_NAME } = process.config().parsed as { [key: string]: string }
+const dotenvFile = path.resolve(process.cwd(), '../.env')
+console.log(dotenvFile)
+const { VITE_ALGOLIA_APP_ID, VITE_ALGOLIA_API_KEY, VITE_ALGOLIA_INDEX_NAME } = dotenv.config({
+  path: dotenvFile,
+}).parsed as { [key: string]: string }
 console.log(VITE_ALGOLIA_APP_ID, VITE_ALGOLIA_API_KEY, VITE_ALGOLIA_INDEX_NAME)
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
