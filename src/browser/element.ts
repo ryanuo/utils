@@ -2,7 +2,7 @@
  * 批量操作元素类名
  * @category DOM
  * @example
- * ```ts
+ * ```ts twoslash
  * import { manageClasses } from '@ryanuo/utils'
  * const el = document.getElementById('myElement')
  * manageClasses(el, 'add', ['class1', 'class2'])
@@ -25,7 +25,7 @@ export function manageClasses(
  * 只触发一次的事件监听
  * @category DOM
  * @example
- * ```ts
+ * ```ts twoslash
  * import { once } from '@ryanuo/utils'
  * once(document, 'click', (e) => {
  *   console.log(e)
@@ -51,7 +51,7 @@ export function onceEventListener(
  * Check if the user is visiting via a mobile device.
  * @category DOM
  * @example
- * ```ts
+ * ```ts twoslash
  * import { isMobile } from '@ryanuo/utils'
  * if (isMobile()) {
  *   console.log('This is a mobile device.')

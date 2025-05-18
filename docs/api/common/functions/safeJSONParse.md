@@ -24,7 +24,7 @@ A successfully parsed JSON object, or null if parsing fails
 
 ## Example
 
-```ts
+```ts twoslash
 import { safeParseJSON } from '@ryanuo/utils'
 const json = '{"name": "John", "age": 30}'
 const obj = safeParseJSON(json)

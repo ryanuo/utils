@@ -24,7 +24,7 @@ Whether the value is a number
 
 ## Example
 
-```ts
+```ts twoslash
 import { isNumber } from '@ryanuo/utils'
 isNumber(123) // true
 isNumber('123') // false

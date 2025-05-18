@@ -30,7 +30,7 @@ Whether the value is a function
 
 ## Example
 
-```ts
+```ts twoslash
 import { isFunction } from '@ryanuo/utils'
 isFunction(() => {}) // true
 isFunction(123) // false

@@ -24,7 +24,7 @@ Whether the value is an regexp
 
 ## Example
 
-```ts
+```ts twoslash
 import { isRegExp } from '@ryanuo/utils'
 isRegExp(/test/) // true
 isRegExp('test') // false

@@ -3,7 +3,7 @@
  * UUID (Universally Unique Identifier) is a standard used in distributed systems to uniquely identify information
  * This function implements a simple UUID generation algorithm, primarily used to generate unique identifiers for use in applications
  * @example
- * ```ts
+ * ```ts twoslash
  * import { getUuid } from '@ryanuo/utils'
  * console.log(getUuid()) // xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx
  * ```
@@ -34,7 +34,7 @@ export type Curry<F extends (...args: any[]) => any> =
  * The feature of a curried function is that it can receive one or more arguments,
  * and returns a new function until all required arguments are received, then executes the original function.
  * @example
- * ```ts
+ * ```ts twoslash
  * import { curry } from '@ryanuo/utils'
  * const add = (a: number, b: number) => a + b
  * const curriedAdd = curry(add)
@@ -59,7 +59,7 @@ export function curry<F extends (...args: any[]) => any>(fn: F): Curry<F> {
 /**
  * Safely parses a JSON string
  * @example
- * ```ts
+ * ```ts twoslash
  * import { safeParseJSON } from '@ryanuo/utils'
  * const json = '{"name": "John", "age": 30}'
  * const obj = safeParseJSON(json)
@@ -82,7 +82,7 @@ export function safeJSONParse(json: string) {
  * A debouncing function is used to limit the frequency of executing a function within a specified time frame, preventing it from being called too frequently.
  * If the function is called again within the specified interval, the previous call will be canceled and the timer will reset.
  * @example
- * ```ts
+ * ```ts twoslash
  * import { debounce } from '@ryanuo/utils'
  * const debouncedFn = debounce(() => {
  *   console.log('Debounced function executed')

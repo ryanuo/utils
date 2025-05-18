@@ -24,7 +24,7 @@ function quickSort(arr): number[];
 
 ## Example
 
-```ts
+```ts twoslash
 import { quickSort } from '@ryanuo/utils'
 const sorted = quickSort([5, 3, 8, 4, 2])
 console.log(sorted)  // [2, 3, 4, 5, 8]

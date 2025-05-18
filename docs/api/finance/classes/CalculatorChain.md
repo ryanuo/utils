@@ -10,7 +10,7 @@
 
 ## Example
 
-```ts
+```ts twoslash
 import { chain } from '@ryanuo/utils'
 chain(100)
   .add(10)

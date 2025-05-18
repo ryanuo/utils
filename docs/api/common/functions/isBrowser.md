@@ -16,7 +16,7 @@ Whether the current environment is a browser
 
 ## Example
 
-```ts
+```ts twoslash
 import { isBrowser } from '@ryanuo/utils'
 isBrowser() // true
 ```

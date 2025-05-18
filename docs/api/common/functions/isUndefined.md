@@ -24,7 +24,7 @@ Whether the value is an undefined
 
 ## Example
 
-```ts
+```ts twoslash
 import { isUndefined } from '@ryanuo/utils'
 isUndefined(undefined) // true
 isUndefined(null) // false

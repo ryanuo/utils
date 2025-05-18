@@ -24,7 +24,7 @@ function isPrime(num): boolean;
 
 ## Example
 
-```ts
+```ts twoslash
 import { isPrime } from '@ryanuo/utils'
 console.log(isPrime(11))  // true
 console.log(isPrime(15))  // false

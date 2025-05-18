@@ -24,7 +24,7 @@ The string representation of the value
 
 ## Example
 
-```ts
+```ts twoslash
 import { toString } from '@ryanuo/utils'
 toString({}) // '[object Object]'
 ```

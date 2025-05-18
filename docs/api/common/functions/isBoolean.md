@@ -24,7 +24,7 @@ Whether the value is a boolean
 
 ## Example
 
-```ts
+```ts twoslash
 import { isBoolean } from '@ryanuo/utils'
 isBoolean(true) // true
 isBoolean(false) // true

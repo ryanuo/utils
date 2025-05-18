@@ -2,7 +2,7 @@
  * to string type of value [Object.prototype.toString]
  * @category type
  * @example
- * ```ts
+ * ```ts twoslash
  * import { toString } from '@ryanuo/utils'
  * toString({}) // '[object Object]'
  * ```
@@ -15,7 +15,7 @@ export const toString = (v: any) => Object.prototype.toString.call(v)
  * Get the type name of the value
  * @category type
  * @example
- * ```ts
+ * ```ts twoslash
  * import { getTypeName } from '@ryanuo/utils'
  * getTypeName({}) // 'object'
  * getTypeName([]) // 'array'
@@ -34,7 +34,7 @@ export function getTypeName(v: any) {
  * Convert a number to a fixed value with specified decimal places.
  * @category type
  * @example
- * ```ts
+ * ```ts twoslash
  * import { numberToFixed } from '@ryanuo/utils'
  * numberToFixed(1.23456) // 1.2346
  * numberToFixed(1.23456, 2) // 1.23
@@ -58,7 +58,7 @@ export function numberToFixed(num: number, fixed: number = 4) {
  * 安全的深拷贝（处理循环引用）
  * @category type
  * @example
- * ```ts
+ * ```ts twoslash
  * import { deepClone } from '@ryanuo/utils'
  * const obj = { a: 1, b: { c: 2 } }
  * const cloneObj = deepClone(obj)

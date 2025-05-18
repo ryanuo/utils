@@ -37,7 +37,7 @@ function manageClasses(
 
 ## Example
 
-```ts
+```ts twoslash
 import { manageClasses } from '@ryanuo/utils'
 const el = document.getElementById('myElement')
 manageClasses(el, 'add', ['class1', 'class2'])

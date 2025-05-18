@@ -24,7 +24,7 @@ function fibonacciDP(n): number;
 
 ## Example
 
-```ts
+```ts twoslash
 import { fibonacciDP } from '@ryanuo/utils'
 console.log(fibonacciDP(10))  // 55
 ```

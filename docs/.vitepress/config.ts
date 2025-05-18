@@ -3,6 +3,7 @@ import process from 'node:process'
 import dotenv from 'dotenv'
 import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
+import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 import typedocSidebar from '../api/typedoc-sidebar.json'
 import { version } from '../../package.json'
 import { transDocsJson } from './utils'
@@ -52,6 +53,15 @@ export default defineConfig({
         dateStyle: 'short',
         timeStyle: 'short',
       },
+    },
+  },
+  markdown: {
+    codeTransformers: [
+      transformerTwoslash(),
+    ] as any,
+    theme: {
+      light: 'vitesse-light',
+      dark: 'vitesse-dark',
     },
   },
 })

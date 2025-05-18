@@ -59,7 +59,7 @@ Returns a new debounced function.
 
 ## Example
 
-```ts
+```ts twoslash
 import { debounce } from '@ryanuo/utils'
 const debouncedFn = debounce(() => {
   console.log('Debounced function executed')

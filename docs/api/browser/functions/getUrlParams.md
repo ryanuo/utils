@@ -24,7 +24,7 @@ An object of parsed parameters
 
 ## Example
 
-```ts
+```ts twoslash
 import { getUrlParams } from '@ryanuo/utils'
 getUrlParams() // { a: '1', b: '2' }
 ```

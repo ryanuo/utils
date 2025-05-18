@@ -24,7 +24,7 @@ Whether the value is an date
 
 ## Example
 
-```ts
+```ts twoslash
 import { isDate } from '@ryanuo/utils'
 isDate(new Date()) // true
 isDate('2023-01-01') // false

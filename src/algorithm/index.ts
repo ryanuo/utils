@@ -7,7 +7,7 @@
  * 冒泡排序（Bubble Sort）
  * @category Algorithm
  * @example
- * ```ts
+ * ```ts twoslash
  * import { bubbleSort } from '@ryanuo/utils'
  * const sorted = bubbleSort([5, 3, 8, 4, 2])
  * console.log(sorted)  // [2, 3, 4, 5, 8]
@@ -30,7 +30,7 @@ export function bubbleSort(arr: number[]): number[] {
  * 快速排序（Quick Sort）
  * @category Algorithm
  * @example
- * ```ts
+ * ```ts twoslash
  * import { quickSort } from '@ryanuo/utils'
  * const sorted = quickSort([5, 3, 8, 4, 2])
  * console.log(sorted)  // [2, 3, 4, 5, 8]
@@ -51,7 +51,7 @@ export function quickSort(arr: number[]): number[] {
  * 二分查找（Binary Search）
  * @category Algorithm
  * @example
- * ```ts
+ * ```ts twoslash
  * import { binarySearch } from '@ryanuo/utils'
  * const index = binarySearch([1, 2, 3, 4, 5], 3)
  * console.log(index)  // 2
@@ -78,7 +78,7 @@ export function binarySearch(arr: number[], target: number): number {
  * 判断一个数是否为质数（Prime Number Check）
  * @category Algorithm
  * @example
- * ```ts
+ * ```ts twoslash
  * import { isPrime } from '@ryanuo/utils'
  * console.log(isPrime(11))  // true
  * console.log(isPrime(15))  // false
@@ -101,7 +101,7 @@ export function isPrime(num: number): boolean {
  * 斐波那契数列（Fibonacci Sequence） 动态规划
  * @category Algorithm
  * @example
- * ```ts
+ * ```ts twoslash
  * import { fibonacciDP } from '@ryanuo/utils'
  * console.log(fibonacciDP(10))  // 55
  * ```
@@ -120,7 +120,7 @@ export function fibonacciDP(n: number): number {
  * 斐波那契数列（递归版）
  * @category Algorithm
  * @example
- * ```ts
+ * ```ts twoslash
  * import { fibonacciRecursive } from '@ryanuo/utils'
  * console.log(fibonacciRecursive(10))  // 55
  * ```

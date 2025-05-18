@@ -30,7 +30,7 @@ The converted number with the specified number of decimal places.
 
 ## Example
 
-```ts
+```ts twoslash
 import { numberToFixed } from '@ryanuo/utils'
 numberToFixed(1.23456) // 1.2346
 numberToFixed(1.23456, 2) // 1.23

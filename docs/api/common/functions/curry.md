@@ -32,7 +32,7 @@ Returns a curried function capable of gradually receiving arguments until the or
 
 ## Example
 
-```ts
+```ts twoslash
 import { curry } from '@ryanuo/utils'
 const add = (a: number, b: number) => a + b
 const curriedAdd = curry(add)

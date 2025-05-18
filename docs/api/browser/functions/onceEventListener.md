@@ -37,7 +37,7 @@ function onceEventListener(
 
 ## Example
 
-```ts
+```ts twoslash
 import { once } from '@ryanuo/utils'
 once(document, 'click', (e) => {
   console.log(e)

@@ -30,7 +30,7 @@ function binarySearch(arr, target): number;
 
 ## Example
 
-```ts
+```ts twoslash
 import { binarySearch } from '@ryanuo/utils'
 const index = binarySearch([1, 2, 3, 4, 5], 3)
 console.log(index)  // 2

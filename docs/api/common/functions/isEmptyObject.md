@@ -20,7 +20,7 @@ Check if an object is empty.
 
 ## Example
 
-```ts
+```ts twoslash
 import { isEmptyObject } from '@ryanuo/utils'
 isEmptyObject({}) // true
 isEmptyObject([]) // true

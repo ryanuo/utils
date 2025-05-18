@@ -24,7 +24,7 @@ Whether the value is an object
 
 ## Example
 
-```ts
+```ts twoslash
 import { isObject } from '@ryanuo/utils'
 isObject({}) // true
 isObject([]) // false

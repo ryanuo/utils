@@ -18,7 +18,7 @@ The generated UUID string in the format 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
 
 ## Example
 
-```ts
+```ts twoslash
 import { getUuid } from '@ryanuo/utils'
 console.log(getUuid()) // xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx
 ```

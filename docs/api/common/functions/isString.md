@@ -24,7 +24,7 @@ Whether the value is an string
 
 ## Example
 
-```ts
+```ts twoslash
 import { isString } from '@ryanuo/utils'
 isString('123') // true
 isString(123) // false

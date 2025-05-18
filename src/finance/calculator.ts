@@ -139,7 +139,7 @@ export function calculatePercentage(
  * @param num 数字或Decimal实例
  * @returns 链式计算对象
  * @example
- * ```ts
+ * ```ts twoslash
  * import { chain } from '@ryanuo/utils'
  * chain(100)
  *   .add(10)

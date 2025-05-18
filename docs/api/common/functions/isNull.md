@@ -24,7 +24,7 @@ Whether the value is an null
 
 ## Example
 
-```ts
+```ts twoslash
 import { isNull } from '@ryanuo/utils'
 isNull(null) // true
 isNull(undefined) // false

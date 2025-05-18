@@ -24,7 +24,7 @@ The type name of the value
 
 ## Example
 
-```ts
+```ts twoslash
 import { getTypeName } from '@ryanuo/utils'
 getTypeName({}) // 'object'
 getTypeName([]) // 'array'

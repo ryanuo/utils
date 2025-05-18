@@ -28,7 +28,7 @@ function deepClone<T>(obj): T;
 
 ## Example
 
-```ts
+```ts twoslash
 import { deepClone } from '@ryanuo/utils'
 const obj = { a: 1, b: { c: 2 } }
 const cloneObj = deepClone(obj)

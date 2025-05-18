@@ -24,7 +24,7 @@ function bubbleSort(arr): number[];
 
 ## Example
 
-```ts
+```ts twoslash
 import { bubbleSort } from '@ryanuo/utils'
 const sorted = bubbleSort([5, 3, 8, 4, 2])
 console.log(sorted)  // [2, 3, 4, 5, 8]

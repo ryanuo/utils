@@ -4,7 +4,7 @@ import { isEmptyObject } from '../common'
  * Parse URL query parameters
  * @category URL
  * @example
- * ```ts
+ * ```ts twoslash
  * import { getUrlParams } from '@ryanuo/utils'
  * getUrlParams() // { a: '1', b: '2' }
  * ```
@@ -23,7 +23,7 @@ export function getUrlParams(url: string = window.location.search): Record<strin
  * Convert an object to URL parameters
  * @category URL
  * @example
- * ```ts
+ * ```ts twoslash
  * import { getUrlParamsString } from '@ryanuo/utils'
  * getUrlParamsString({ a: 1, b: 2 }) // '?a=1&b=2'
  * getUrlParamsString({ a: 1, b: 2 }, 'https://www.example.com')

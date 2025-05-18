@@ -24,7 +24,7 @@ function fibonacciRecursive(n): number;
 
 ## Example
 
-```ts
+```ts twoslash
 import { fibonacciRecursive } from '@ryanuo/utils'
 console.log(fibonacciRecursive(10))  // 55
 ```

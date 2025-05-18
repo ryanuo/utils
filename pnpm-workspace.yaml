@@ -23,6 +23,7 @@ catalogs:
     typedoc-plugin-markdown: ^4.6.3
     typedoc: ^0.28.4
     dotenv: ^16.5.0
+    '@shikijs/vitepress-twoslash': ^3.4.2
 
   test:
     happy-dom: ^17.4.7

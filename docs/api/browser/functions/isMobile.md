@@ -16,7 +16,7 @@ Returns true if the user appears to be using a mobile device; otherwise returns 
 
 ## Example
 
-```ts
+```ts twoslash
 import { isMobile } from '@ryanuo/utils'
 if (isMobile()) {
   console.log('This is a mobile device.')
