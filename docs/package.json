@@ -11,7 +11,7 @@
     "update": "pnpm run predocs:dev && cd ../ && pnpm run readme"
   },
   "devDependencies": {
-    "@ryanuo/utils": "latest",
+    "@ryanuo/utils": "catalog:docs",
     "@shikijs/vitepress-twoslash": "catalog:docs",
     "dotenv": "catalog:docs",
     "typedoc": "catalog:docs",

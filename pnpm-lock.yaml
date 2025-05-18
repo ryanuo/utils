@@ -47,6 +47,9 @@ catalogs:
       specifier: ^3.1.3
       version: 3.1.3
   docs:
+    '@ryanuo/utils':
+      specifier: ^1.3.3
+      version: 1.3.3
     '@shikijs/vitepress-twoslash':
       specifier: ^3.4.2
       version: 3.4.2
@@ -121,8 +124,8 @@ importers:
   docs:
     devDependencies:
       '@ryanuo/utils':
-        specifier: latest
-        version: 1.3.2
+        specifier: catalog:docs
+        version: 1.3.3
       '@shikijs/vitepress-twoslash':
         specifier: catalog:docs
         version: 3.4.2(typescript@5.4.5)
@@ -987,8 +990,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@ryanuo/utils@1.3.2':
-    resolution: {integrity: sha512-ffEcHfa7nT96i5Ukxlmh/VqBPAdAoK/p8aDBNRlfmhGuruaZ2CENjaZWiAQ7emwQn3rcX9EdTXLCMsVT/YaLWw==}
+  '@ryanuo/utils@1.3.3':
+    resolution: {integrity: sha512-ZrWCPkv/UAOXz+xcW40jV1qVqyEEZGXO/z9sshYnpC0IRfRBajfE1DsjYy9k49owK50mtBPzJD4VXgQfDRvzGQ==}
 
   '@shikijs/core@2.5.0':
     resolution: {integrity: sha512-uu/8RExTKtavlpH7XqnVYBrfBkUc20ngXiX9NSrBhOVZYv/7XQRKUyhtkeflY5QsxC0GbJThCerruZfsUaSldg==}
@@ -4340,7 +4343,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.40.2':
     optional: true
 
-  '@ryanuo/utils@1.3.2':
+  '@ryanuo/utils@1.3.3':
     dependencies:
       decimal.js: 10.5.0
       query-string: 9.1.2
