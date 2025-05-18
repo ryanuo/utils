@@ -14,6 +14,12 @@
 | [manageClasses](functions/manageClasses.md) | 批量操作元素类名 |
 | [onceEventListener](functions/onceEventListener.md) | 只触发一次的事件监听 |
 
+## Download
+
+| Function | Description |
+| ------ | ------ |
+| [downloadFile](functions/downloadFile.md) | 文件下载工具函数 |
+
 ## SafeStorage
 
 | Name | Description |

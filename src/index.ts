@@ -12,6 +12,7 @@ export * from './common/date'
 export * from './browser/element'
 export * from './browser/storage'
 export * from './browser/url'
+export * from './browser/download'
 
 /**
  * @module algorithm
