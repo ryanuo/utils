@@ -37,6 +37,7 @@ IndexedDB 缓存对象
 ## Example
 
 ```ts twoslash
+import { getIndexedDBCache } from '@ryanuo/utils';
 // 使用示例
 const cache = await getIndexedDBCache('api-cache', 'responses');
 await cache.set('users', [{ id: 1, name: 'Alice' }]);

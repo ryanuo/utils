@@ -38,8 +38,8 @@ function onceEventListener(
 ## Example
 
 ```ts twoslash
-import { once } from '@ryanuo/utils'
-once(document, 'click', (e) => {
+import { onceEventListener } from '@ryanuo/utils'
+onceEventListener(document, 'click', (e) => {
   console.log(e)
 })
 ```

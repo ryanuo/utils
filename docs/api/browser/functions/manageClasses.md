@@ -39,8 +39,6 @@ function manageClasses(
 
 ```ts twoslash
 import { manageClasses } from '@ryanuo/utils'
-const el = document.getElementById('myElement')
+const el = document.getElementById('myElement') as HTMLElement
 manageClasses(el, 'add', ['class1', 'class2'])
-manageClasses(el, 'remove', ['class1', 'class2'])
-manageClasses(el, 'toggle', ['class1', 'class2'])
 ```

@@ -4,10 +4,8 @@
  * @example
  * ```ts twoslash
  * import { manageClasses } from '@ryanuo/utils'
- * const el = document.getElementById('myElement')
+ * const el = document.getElementById('myElement') as HTMLElement
  * manageClasses(el, 'add', ['class1', 'class2'])
- * manageClasses(el, 'remove', ['class1', 'class2'])
- * manageClasses(el, 'toggle', ['class1', 'class2'])
  * ```
  * @param el 目标元素
  * @param action 'add' | 'remove' | 'toggle'
@@ -26,8 +24,8 @@ export function manageClasses(
  * @category DOM
  * @example
  * ```ts twoslash
- * import { once } from '@ryanuo/utils'
- * once(document, 'click', (e) => {
+ * import { onceEventListener } from '@ryanuo/utils'
+ * onceEventListener(document, 'click', (e) => {
  *   console.log(e)
  * })
  * ```

@@ -63,6 +63,6 @@ Returns a new debounced function.
 import { debounce } from '@ryanuo/utils'
 const debouncedFn = debounce(() => {
   console.log('Debounced function executed')
-})
+}, 500, true)
 debouncedFn()
 ```

@@ -10,7 +10,7 @@ A simple storage wrapper that uses localStorage and sessionStorage.
 
 ## Example
 
-```
+```ts twoslash
 import { safeStorage } from '@ryanuo/utils'
 // Basic usage (localStorage)
 safeStorage.set('user', { name: 'John' })

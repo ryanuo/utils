@@ -9,6 +9,7 @@
  * ```
  * @returns {string} The generated UUID string in the format 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
  */
+
 export function getUuid() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
     const r = (Math.random() * 16) | 0
@@ -60,9 +61,9 @@ export function curry<F extends (...args: any[]) => any>(fn: F): Curry<F> {
  * Safely parses a JSON string
  * @example
  * ```ts twoslash
- * import { safeParseJSON } from '@ryanuo/utils'
+ * import { safeJSONParse } from '@ryanuo/utils'
  * const json = '{"name": "John", "age": 30}'
- * const obj = safeParseJSON(json)
+ * const obj = safeJSONParse(json)
  * console.log(obj) // { name: 'John', age: 30 }
  * ```
  * @param json The JSON string to be parsed
@@ -86,7 +87,7 @@ export function safeJSONParse(json: string) {
  * import { debounce } from '@ryanuo/utils'
  * const debouncedFn = debounce(() => {
  *   console.log('Debounced function executed')
- * })
+ * }, 500, true)
  * debouncedFn()
  * ```
  * @param fn The function to be debounced.
@@ -127,7 +128,12 @@ export function debounce<T extends (...args: any[]) => any>(
 /**
  * Creates a throttled function that only executes the original function at most once per `delay` milliseconds.
  * If `immediate` is true, the original function will be executed immediately upon the first call within the `delay` period.
- *
+ * @example
+ * ```ts twoslash
+ * import { throttle } from '@ryanuo/utils'
+ * throttle(() => console.log('Hello, world!'), 1000, true)
+ * throttle(() => console.log('Hello, world!'), 1000, false)
+ * ```
  * @param fn The original function to be throttled.
  * @param delay The minimum interval in milliseconds between executions of the original function.
  * @param immediate Whether to execute the original function immediately upon the first call within the `delay` period. Defaults to true.

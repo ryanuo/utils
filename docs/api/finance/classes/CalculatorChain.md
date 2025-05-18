@@ -11,8 +11,8 @@
 ## Example
 
 ```ts twoslash
-import { chain } from '@ryanuo/utils'
-chain(100)
+import { CalculatorChain } from '@ryanuo/utils'
+new CalculatorChain(100)
   .add(10)
   .sub(5)
   .mul(2)

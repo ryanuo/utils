@@ -81,7 +81,7 @@ function checkExpiration(item: any) {
 /**
  * A simple storage wrapper that uses localStorage and sessionStorage.
  * @example
- * ```
+ * ```ts twoslash
  * import { safeStorage } from '@ryanuo/utils'
  * // Basic usage (localStorage)
  * safeStorage.set('user', { name: 'John' })

@@ -30,6 +30,6 @@ The URL to which parameters will be added, defaults to the current page URL
 
 ```ts twoslash
 import { getUrlParamsString } from '@ryanuo/utils'
-getUrlParamsString({ a: 1, b: 2 }) // '?a=1&b=2'
-getUrlParamsString({ a: 1, b: 2 }, 'https://www.example.com')
+getUrlParamsString({ a: '1', b: '2' }) // '?a=1&b=2'
+getUrlParamsString({ a: '1', b: '2', c: '3' }) // '?a=1&b=2&c=3'
 ```

@@ -55,3 +55,11 @@ Returns a new throttled function.
 ### Returns
 
 `void`
+
+## Example
+
+```ts twoslash
+import { throttle } from '@ryanuo/utils'
+throttle(() => console.log('Hello, world!'), 1000, true)
+throttle(() => console.log('Hello, world!'), 1000, false)
+```
