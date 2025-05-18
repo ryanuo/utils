@@ -39,7 +39,8 @@ options?): Promise<void>;
 
 ## Example
 
-```ts
+```ts twoslash
+import { downloadFile } from '@ryanuo/utils';
 // 基础用法
 downloadFile('https://example.com/file.pdf');
 

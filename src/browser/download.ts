@@ -7,6 +7,8 @@
  * @returns 成功或失败的Promise
  *
  * @example
+ * ```ts twoslash
+ * import { downloadFile } from '@ryanuo/utils';
  * // 基础用法
  * downloadFile('https://example.com/file.pdf');
  *
@@ -19,6 +21,7 @@
  *     Authorization: 'Bearer token'
  *   }
  * });
+ * ```
  */
 export async function downloadFile(
   url: string,
