@@ -4,7 +4,7 @@
  * @param url - 文件URL地址
  * @param fileName - 可选的下载文件名（默认为URL中的文件名）
  * @param options - 可选的请求配置（同fetch API）
- * @returns Promise<void> - 成功或失败的Promise
+ * @returns 成功或失败的Promise
  *
  * @example
  * // 基础用法

@@ -35,7 +35,7 @@ options?): Promise<void>;
 
 `Promise`\<`void`\>
 
-Promise<void> - 成功或失败的Promise
+成功或失败的Promise
 
 ## Example
 
