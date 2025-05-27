@@ -12,8 +12,9 @@
 
 ## Other
 
-| Function | Description |
+| Name | Description |
 | ------ | ------ |
+| [dayjs](variables/dayjs.md) | - |
 | [curry](functions/curry.md) | Converts a function into a curried function. The feature of a curried function is that it can receive one or more arguments, and returns a new function until all required arguments are received, then executes the original function. |
 | [debounce](functions/debounce.md) | Function debouncing A debouncing function is used to limit the frequency of executing a function within a specified time frame, preventing it from being called too frequently. If the function is called again within the specified interval, the previous call will be canceled and the timer will reset. |
 | [getUuid](functions/getUuid.md) | Generate a unique UUID UUID (Universally Unique Identifier) is a standard used in distributed systems to uniquely identify information This function implements a simple UUID generation algorithm, primarily used to generate unique identifiers for use in applications |

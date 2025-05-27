@@ -1,3 +1,4 @@
+import date from 'dayjs'
 import { isDate, isFunction } from './is'
 
 /**
@@ -78,3 +79,6 @@ export function dateFormat(date: Date, fmt = 'YYYY-MM-dd'): string {
 
   return fmt
 }
+
+// 导出dayjs = dayjs
+export const dayjs = date
