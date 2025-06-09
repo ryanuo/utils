@@ -31,27 +31,54 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
+    "./ai": {
+      "types": "./dist/types/ai/index.d.ts",
+      "import": "./dist/lib/ai/index.mjs",
+      "require": "./dist/lib/ai/index.cjs"
+    },
+    "./algorithm": {
+      "types": "./dist/types/algorithm/index.d.ts",
+      "import": "./dist/lib/algorithm/index.mjs",
+      "require": "./dist/lib/algorithm/index.cjs"
+    },
+    "./browser": {
+      "types": "./dist/types/browser/index.d.ts",
+      "import": "./dist/lib/browser/index.mjs",
+      "require": "./dist/lib/browser/index.cjs"
+    },
+    "./common": {
+      "types": "./dist/types/common/index.d.ts",
+      "import": "./dist/lib/common/index.mjs",
+      "require": "./dist/lib/common/index.cjs"
+    },
+    "./finance": {
+      "types": "./dist/types/finance/index.d.ts",
+      "import": "./dist/lib/finance/index.mjs",
+      "require": "./dist/lib/finance/index.cjs"
+    },
+    "./graphics": {
+      "types": "./dist/types/graphics/index.d.ts",
+      "import": "./dist/lib/graphics/index.mjs",
+      "require": "./dist/lib/graphics/index.cjs"
+    },
+    "./network": {
+      "types": "./dist/types/network/index.d.ts",
+      "import": "./dist/lib/network/index.mjs",
+      "require": "./dist/lib/network/index.cjs"
+    },
     "./node": {
-      "types": "./dist/node/index.d.ts",
-      "import": "./dist/node/index.mjs",
-      "require": "./dist/node/index.cjs"
+      "types": "./dist/types/node/index.d.ts",
+      "import": "./dist/lib/node/index.mjs",
+      "require": "./dist/lib/node/index.cjs"
     }
   },
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
-      ]
-    }
-  },
+  "types": "./dist/types/index.d.ts",
   "files": [
     "dist"
   ],
@@ -75,6 +102,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
+    "@ryanuo/utils": "workspace:*",
     "@types/node": "catalog:dev",
     "bumpp": "catalog:dev",
     "eslint": "catalog:dev",
