@@ -1,54 +1,42 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { ofetch } from 'ofetch'
 import { fetchWithTimeout, parallelRequests } from '../../src/network/http'
 
-// Mocking global.fetch
-vi.mock('node-fetch', () => ({
-  fetch: vi.fn(),
+// Mocking ofetch
+vi.mock('ofetch', () => ({
+  ofetch: vi.fn(),
 }))
 
 describe('fetchWithTimeout', () => {
-  let originalFetch: any
-
   beforeEach(() => {
-    originalFetch = globalThis.fetch
-  })
-
-  afterEach(() => {
-    globalThis.fetch = originalFetch
+    vi.clearAllMocks()
   })
 
   it('should successfully fetch data within the timeout period', async () => {
-    const mockResponse = new Response(JSON.stringify({ success: true }), {
-      status: 200,
-      headers: {
-        'Content-type': 'application/json',
-      },
-    })
-    globalThis.fetch = vi.fn().mockResolvedValue(mockResponse)
+    const mockResponse = { success: true }
+    vi.mocked(ofetch).mockResolvedValueOnce(mockResponse)
 
     const response = await fetchWithTimeout('http://example.com', {}, 3000)
-    expect(response.status).toBe(200)
+    expect(response).toEqual(mockResponse)
+    expect(ofetch).toHaveBeenCalledWith('http://example.com', expect.objectContaining({
+      signal: expect.any(AbortSignal),
+    }))
   })
 
   it('should throw an error when the request times out', async () => {
-    globalThis.fetch = vi.fn().mockRejectedValue(new Error('Request timed out'))
+    vi.mocked(ofetch).mockRejectedValueOnce(new Error('Request timed out'))
 
-    try {
-      await fetchWithTimeout('http://example.com', {}, 1000)
-    }
-    catch (err: any) {
-      expect(err.message).toContain('请求超时或失败')
-    }
+    await expect(fetchWithTimeout('http://example.com', {}, 1000))
+      .rejects
+      .toThrow('请求超时或失败: Request timed out')
   })
 
   it('should use default timeout if not provided', async () => {
-    globalThis.fetch = vi.fn().mockImplementationOnce(() => {
-      // Check if signal is set in options and simulate a successful response
-      return Promise.resolve(new Response(JSON.stringify({}), { status: 200 }))
-    })
+    const mockResponse = { success: true }
+    vi.mocked(ofetch).mockResolvedValueOnce(mockResponse)
 
     await fetchWithTimeout('http://example.com')
-    expect(globalThis.fetch).toHaveBeenCalledWith(
+    expect(ofetch).toHaveBeenCalledWith(
       'http://example.com',
       expect.objectContaining({
         signal: expect.any(AbortSignal),

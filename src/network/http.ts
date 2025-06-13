@@ -1,3 +1,5 @@
+import { ofetch } from 'ofetch'
+
 /**
  * 带超时的 fetch 请求
  * @category Http
@@ -14,7 +16,7 @@ async function fetchWithTimeout(
   const timer = setTimeout(() => controller.abort(), timeout)
 
   try {
-    const response = await fetch(url, {
+    const response = await ofetch(url, {
       ...options,
       signal: controller.signal,
     })

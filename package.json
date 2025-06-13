@@ -96,8 +96,9 @@
     "readme": "esno script/readme.ts"
   },
   "dependencies": {
-    "dayjs": "^1.11.13",
+    "dayjs": "catalog:build",
     "decimal.js": "catalog:build",
+    "ofetch": "catalog:build",
     "query-string": "catalog:build"
   },
   "devDependencies": {
