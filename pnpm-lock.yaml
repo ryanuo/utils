@@ -53,9 +53,6 @@ catalogs:
       specifier: ^3.2.3
       version: 3.2.3
   docs:
-    '@ryanuo/utils':
-      specifier: ^1.3.7
-      version: 1.3.7
     '@shikijs/vitepress-twoslash':
       specifier: ^3.4.2
       version: 3.4.2
@@ -139,7 +136,7 @@ importers:
   docs:
     devDependencies:
       '@ryanuo/utils':
-        specifier: catalog:docs
+        specifier: latest
         version: 1.3.7
       '@shikijs/vitepress-twoslash':
         specifier: catalog:docs
