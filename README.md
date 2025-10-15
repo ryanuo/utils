@@ -81,6 +81,18 @@ Below are the module categories available in the utility library:
 | [Node](https://utils.ryanuo.cc/api/node/) | [logger()](https://utils.ryanuo.cc/api/node/variables/logger.html)；[mkdirp()](https://utils.ryanuo.cc/api/node/functions/mkdirp.html)；[rmrf()](https://utils.ryanuo.cc/api/node/functions/rmrf.html) |
 <!-- auto utils end -->
 
+## How to development
+
+```bash
+pnpm i
+pnpm dev
+pnpm build
+
+# docs
+cd docs
+pnpm run predocs:dev
+```
+
 ## License
 
 [MIT](https://github.com/ryanuo/utils/blob/main/LICENSE) License © 2023-PRESENT [ryanuo](https://github.com/ryanuo)
