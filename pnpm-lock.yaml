@@ -135,9 +135,6 @@ importers:
 
   docs:
     devDependencies:
-      '@ryanuo/utils':
-        specifier: 1.3.9
-        version: 1.3.9
       '@shikijs/vitepress-twoslash':
         specifier: catalog:docs
         version: 3.4.2(typescript@5.4.5)
@@ -1001,9 +998,6 @@ packages:
     resolution: {integrity: sha512-bwspbWB04XJpeElvsp+DCylKfF4trJDa2Y9Go8O6A7YLX2LIKGcNK/CYImJN6ZP4DcuOHB4Utl3iCbnR62DudA==}
     cpu: [x64]
     os: [win32]
-
-  '@ryanuo/utils@1.3.9':
-    resolution: {integrity: sha512-qdD1QSZCq4ntSOQXLOQ8YErqW9fANiBU32vjuhPi0SmJXBepCcI7qTmSHbNviHbzu8LLYnTKdJ0h7Yx7uxigEQ==}
 
   '@shikijs/core@2.5.0':
     resolution: {integrity: sha512-uu/8RExTKtavlpH7XqnVYBrfBkUc20ngXiX9NSrBhOVZYv/7XQRKUyhtkeflY5QsxC0GbJThCerruZfsUaSldg==}
@@ -4385,13 +4379,6 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.40.2':
     optional: true
-
-  '@ryanuo/utils@1.3.9':
-    dependencies:
-      dayjs: 1.11.13
-      decimal.js: 10.5.0
-      ofetch: 1.4.1
-      query-string: 9.1.2
 
   '@shikijs/core@2.5.0':
     dependencies:
