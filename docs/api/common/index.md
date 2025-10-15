@@ -21,6 +21,21 @@
 | [safeJSONParse](functions/safeJSONParse.md) | Safely parses a JSON string |
 | [throttle](functions/throttle.md) | Creates a throttled function that only executes the original function at most once per `delay` milliseconds. If `immediate` is true, the original function will be executed immediately upon the first call within the `delay` period. |
 
+## compress
+
+| Function | Description |
+| ------ | ------ |
+| [compress](functions/compress.md) | Compresses a UTF-8 string into a Base64 URI-safe format. |
+| [decompress](functions/decompress.md) | Decompresses a string produced by [compress](functions/compress.md). |
+
+## crypto
+
+| Function | Description |
+| ------ | ------ |
+| [decrypt](functions/decrypt.md) | Decrypts a string previously encrypted with [encrypt](functions/encrypt.md). Applies URI decoding, Base64 decoding, and XOR decryption. |
+| [encrypt](functions/encrypt.md) | Encrypts a string using XOR, Base64, and URI encoding for safe transmission. |
+| [xor](functions/xor.md) | Performs XOR encryption or decryption on a string using a given key. |
+
 ## is
 
 | Function | Description |
