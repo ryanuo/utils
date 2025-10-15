@@ -58,7 +58,7 @@ export function compress(str: string): string {
  * @example
  * ```ts twoslash
  * import { decompress } from '@ryanuo/utils'
- * decompress('aGVsbG8lMjB3b3JsZA%3D%3D) // => 'hello world'
+ * decompress('aGVsbG8lMjB3b3JsZA%3D%3D') // => 'hello world'
  * ```
  * @param str - The compressed Base64 string.
  * @returns The original decompressed string.

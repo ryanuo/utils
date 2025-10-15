@@ -26,5 +26,5 @@ The original decompressed string.
 
 ```ts twoslash
 import { decompress } from '@ryanuo/utils'
-decompress(compress('hello world')) // => 'hello world'
+decompress('aGVsbG8lMjB3b3JsZA%3D%3D') // => 'hello world'
 ```
