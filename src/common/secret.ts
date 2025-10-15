@@ -11,7 +11,7 @@
  * @param key - The encryption key, defaults to `'ryanuo'`.
  * @returns The XOR-transformed string.
  */
-function xor(str: string, key = 'ryanuo') {
+export function xor(str: string, key = 'ryanuo') {
   return Array.from(str)
     .map((c, i) =>
       String.fromCharCode(c.charCodeAt(0) ^ key.charCodeAt(i % key.length)),
@@ -31,7 +31,7 @@ function xor(str: string, key = 'ryanuo') {
  * @param key - Optional encryption key, defaults to `'ryanuo'`.
  * @returns The encrypted, URI-safe string.
  */
-function encrypt(str: string, key?: string): string {
+export function encrypt(str: string, key?: string): string {
   return encodeURIComponent(btoa(xor(str, key)))
 }
 
@@ -46,7 +46,7 @@ function encrypt(str: string, key?: string): string {
  * @param str - The string to compress.
  * @returns The compressed, Base64-encoded string.
  */
-function compress(str: string): string {
+export function compress(str: string): string {
   const bytes = new TextEncoder().encode(str)
   const base64 = btoa(String.fromCharCode(...bytes))
   return encodeURIComponent(base64)
@@ -63,7 +63,7 @@ function compress(str: string): string {
  * @param str - The compressed Base64 string.
  * @returns The original decompressed string.
  */
-function decompress(str: string): string {
+export function decompress(str: string): string {
   try {
     const decodedBase64 = decodeURIComponent(str)
     const binary = atob(decodedBase64)
@@ -90,7 +90,7 @@ function decompress(str: string): string {
  * @param key - Optional decryption key (must match the encryption key).
  * @returns The decrypted plain text string.
  */
-function decrypt(str: string, key?: string): string {
+export function decrypt(str: string, key?: string): string {
   try {
     const decoded = atob(decodeURIComponent(str))
     return xor(decoded, key)
@@ -99,12 +99,4 @@ function decrypt(str: string, key?: string): string {
     console.error('Decrypt error:', err)
     return ''
   }
-}
-
-export {
-  xor,
-  encrypt,
-  decrypt,
-  compress,
-  decompress,
 }

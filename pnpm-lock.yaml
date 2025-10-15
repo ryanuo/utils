@@ -54,7 +54,7 @@ catalogs:
       version: 3.2.3
   docs:
     '@ryanuo/utils':
-      specifier: ^1.3.6
+      specifier: latest
       version: 1.3.6
     '@shikijs/vitepress-twoslash':
       specifier: ^3.4.2
