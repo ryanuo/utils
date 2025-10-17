@@ -1,6 +1,4 @@
 import { execSync } from 'node:child_process'
-import { dirname, resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
 import { defineBuildConfig } from 'unbuild'
 import generateEntries from './script/generateEntries'
 import updatePackageExports from './script/update-package-exports'
