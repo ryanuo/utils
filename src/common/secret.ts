@@ -64,6 +64,8 @@ export function compress(str: string): string {
  * @returns The original decompressed string.
  */
 export function decompress(str: string): string {
+  if (!str)
+    return '' // 空字符串直接返回
   try {
     const decodedBase64 = decodeURIComponent(str)
     const binary = atob(decodedBase64)
@@ -71,7 +73,7 @@ export function decompress(str: string): string {
     return new TextDecoder().decode(bytes)
   }
   catch (err) {
-    console.error('Decompress error:', err)
+    console.warn('Decompress error: Invalid input', err)
     return ''
   }
 }

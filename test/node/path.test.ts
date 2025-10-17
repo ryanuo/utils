@@ -1,105 +1,48 @@
-import { access, mkdir, readdir, rm, stat } from 'node:fs/promises' // 根据实际情况调整导入
-import { dirname, join } from 'node:path'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { mkdirp, rmrf } from '../../src/node/path'
+import { existsSync } from 'node:fs'
+import { join } from 'node:path'
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { mkdirp, projectRoot, resolvePath, rmrf } from '../../src/node/path'
 
-// 模拟 fs/promises 和 path 模块
-vi.mock('fs/promises', async () => {
-  const actual = await vi.importActual('fs/promises')
-  return {
-    ...actual,
-    access: vi.fn(),
-    mkdir: vi.fn(),
-    stat: vi.fn(),
-    readdir: vi.fn(),
-    rm: vi.fn(),
-  }
-})
+describe('path Utils', () => {
+  const testDir = join(projectRoot, 'test-temp')
 
-// 修改:合并所有对 path 模块的模拟，避免重复定义
-vi.mock('path', () => ({
-  dirname: vi.fn(),
-  join: vi.fn(),
-  normalize: vi.fn(),
-}))
-
-describe('mkdirp', () => {
-  let accessMock: any
-  let mkdirMock: any
-  let dirnameMock: any
-
-  beforeEach(() => {
-    accessMock = vi.mocked(access)
-    mkdirMock = vi.mocked(mkdir)
-    dirnameMock = vi.mocked(dirname)
+  // 测试前确保目录不存在
+  beforeEach(async () => {
+    await rmrf(testDir).catch(() => {})
   })
 
-  it('should not create directory if it already exists', async () => {
-    accessMock.mockResolvedValueOnce()
-
-    await mkdirp('/mock/path')
-
-    expect(accessMock).toHaveBeenCalledWith('/mock/path')
-    expect(mkdirMock).not.toHaveBeenCalled()
+  // 测试后清理
+  afterEach(async () => {
+    await rmrf(testDir).catch(() => {})
   })
 
-  it('should recursively create directories', async () => {
-    accessMock.mockRejectedValueOnce(new Error('ENOENT')) // 第一次访问失败
-    accessMock.mockResolvedValueOnce() // 父目录存在
-    dirnameMock.mockReturnValueOnce('/mock') // 第一次 dirname 调用
-
-    await mkdirp('/mock/path')
-
-    expect(accessMock).toHaveBeenNthCalledWith(1, '/mock/path')
-    expect(dirnameMock).toHaveBeenCalledWith('/mock/path')
-    expect(mkdirMock).toHaveBeenCalledWith('/mock/path')
-  })
-})
-
-describe('rmrf', () => {
-  let statMock: any
-  let readdirMock: any
-  let rmMock: any
-  let joinMock: any
-
-  beforeEach(() => {
-    statMock = vi.mocked(stat)
-    readdirMock = vi.mocked(readdir)
-    rmMock = vi.mocked(rm)
-    joinMock = vi.mocked(join)
+  it('should resolvePath correctly', () => {
+    const path = resolvePath('foo/bar')
+    expect(path).toBe(join(projectRoot, 'foo/bar'))
   })
 
-  beforeEach(() => {
-    statMock.mockClear()
-    readdirMock.mockClear()
-    rmMock.mockClear()
-    joinMock.mockClear()
+  it('should create directory recursively', async () => {
+    const nestedDir = join(testDir, 'a/b/c')
+    await mkdirp(nestedDir)
+    expect(existsSync(nestedDir)).toBe(true)
   })
 
-  it('should delete a file', async () => {
-    statMock.mockResolvedValueOnce({ isDirectory: () => false })
+  it('should remove directory recursively', async () => {
+    const nestedDir = join(testDir, 'x/y/z')
+    await mkdirp(nestedDir)
+    expect(existsSync(nestedDir)).toBe(true)
 
-    await rmrf('/mock/path/to/file')
-
-    expect(statMock).toHaveBeenCalledWith('/mock/path/to/file')
-    expect(rmMock).toHaveBeenCalledWith('/mock/path/to/file')
-    expect(joinMock).not.toHaveBeenCalled()
-    expect(readdirMock).not.toHaveBeenCalled()
+    await rmrf(testDir)
+    expect(existsSync(testDir)).toBe(false)
   })
 
-  it('should handle errors gracefully', async () => {
-    const testError = new Error('Test error')
-    statMock.mockRejectedValue(testError)
+  it('rmrf should not throw if path does not exist', async () => {
+    await expect(rmrf(join(testDir, 'nonexistent'))).resolves.not.toThrow()
+  })
 
-    try {
-      await rmrf('/mock/path/to/error')
-    }
-    catch (error) {
-      expect(error).toBe(testError)
-    }
-
-    expect(statMock).toHaveBeenCalledWith('/mock/path/to/error')
-    expect(readdirMock).not.toHaveBeenCalled()
-    expect(rmMock).not.toHaveBeenCalled()
+  it('mkdirp should not throw if directory already exists', async () => {
+    const dir = join(testDir, 'already')
+    await mkdirp(dir)
+    await expect(mkdirp(dir)).resolves.not.toThrow()
   })
 })

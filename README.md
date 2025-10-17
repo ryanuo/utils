@@ -91,6 +91,8 @@ pnpm build
 # docs
 cd docs
 pnpm run predocs:dev
+
+# add test cases
 ```
 
 ## License
