@@ -78,8 +78,20 @@ Below are the module categories available in the utility library:
 | [Finance](https://utils.ryanuo.cc/api/finance/) | [formatCurrency()](https://utils.ryanuo.cc/api/finance/functions/formatCurrency.html)；[calculatePercentage()](https://utils.ryanuo.cc/api/finance/functions/calculatePercentage.html)；[compare()](https://utils.ryanuo.cc/api/finance/functions/compare.html)；[preciseAdd()](https://utils.ryanuo.cc/api/finance/functions/preciseAdd.html)；[preciseDiv()](https://utils.ryanuo.cc/api/finance/functions/preciseDiv.html)；[preciseMul()](https://utils.ryanuo.cc/api/finance/functions/preciseMul.html)；[preciseSub()](https://utils.ryanuo.cc/api/finance/functions/preciseSub.html)；[roundTo()](https://utils.ryanuo.cc/api/finance/functions/roundTo.html)；[decimal()](https://utils.ryanuo.cc/api/finance/variables/decimal.html) |
 | [Graphics](https://utils.ryanuo.cc/api/graphics/) | [hexToRgba()](https://utils.ryanuo.cc/api/graphics/functions/hexToRgba.html)；[lerpColor()](https://utils.ryanuo.cc/api/graphics/functions/lerpColor.html)；[rgbaToHex()](https://utils.ryanuo.cc/api/graphics/functions/rgbaToHex.html) |
 | [Network](https://utils.ryanuo.cc/api/network/) | [checkNetworkStatus()](https://utils.ryanuo.cc/api/network/functions/checkNetworkStatus.html)；[fetchWithTimeout()](https://utils.ryanuo.cc/api/network/functions/fetchWithTimeout.html)；[getClientIP()](https://utils.ryanuo.cc/api/network/functions/getClientIP.html)；[getIndexedDBCache()](https://utils.ryanuo.cc/api/network/functions/getIndexedDBCache.html)；[parallelRequests()](https://utils.ryanuo.cc/api/network/functions/parallelRequests.html)；[request()](https://utils.ryanuo.cc/api/network/functions/request.html) |
-| [Node](https://utils.ryanuo.cc/api/node/) | [logger()](https://utils.ryanuo.cc/api/node/variables/logger.html)；[mkdirp()](https://utils.ryanuo.cc/api/node/functions/mkdirp.html)；[rmrf()](https://utils.ryanuo.cc/api/node/functions/rmrf.html) |
+| [Node](https://utils.ryanuo.cc/api/node/) | [logger()](https://utils.ryanuo.cc/api/node/variables/logger.html)；[projectRoot()](https://utils.ryanuo.cc/api/node/variables/projectRoot.html)；[mkdirp()](https://utils.ryanuo.cc/api/node/functions/mkdirp.html)；[resolvePath()](https://utils.ryanuo.cc/api/node/functions/resolvePath.html)；[rmrf()](https://utils.ryanuo.cc/api/node/functions/rmrf.html) |
 <!-- auto utils end -->
+
+## How to development
+
+```bash
+pnpm i
+pnpm dev
+pnpm build
+
+# docs
+cd docs
+pnpm run predocs:dev
+```
 
 ## License
 

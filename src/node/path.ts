@@ -1,4 +1,26 @@
 import { mkdir, rm } from 'node:fs/promises'
+import { resolve } from 'node:path'
+import process from 'node:process'
+
+/**
+ * 项目根路径工具,运行时获取项目根路径
+ * @category Path
+ * @example
+ * ```ts
+ * // 运行时获取项目根路径 process.cwd()
+ * // 每个模块计算出来的 __dirname 都是 当前模块的目录。
+ * const __dirname = dirname(fileURLToPath(import.meta.url))
+ * const resolvePath = (p: string) => resolve(__dirname, p)
+ * ```
+ */
+export const projectRoot = process.cwd()
+
+/**
+ * 将相对路径解析为基于当前模块的绝对路径
+ * @category Path
+ * @param p 相对路径
+ */
+export const resolvePath = (p: string) => resolve(projectRoot, p)
 
 /**
  * 递归创建目录（如果不存在）

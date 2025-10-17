@@ -6,7 +6,7 @@
     "predocs:dev": "typedoc && pnpm run docs:fix",
     "docs:dev": "vitepress dev",
     "docs:build": "pnpm add @ryanuo/utils@latest --no-lockfile -D && pnpm run docs:dev-build",
-    "docs:dev-build": "pnpm run predocs:dev && vitepress build",
+    "docs:dev-build": "pnpm run predocs:dev && pnpm run update && vitepress build",
     "docs:preview": "vitepress preview",
     "docs:fix": "npx eslint --fix .",
     "update": "pnpm run predocs:dev && cd ../ && pnpm run readme"
