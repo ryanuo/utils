@@ -5,5 +5,9 @@ export default defineConfig({
     exclude: [
       '**/node_modules/**',
     ],
+    coverage: {
+      include: ['src/**/*.ts'],
+      exclude: ['src/index.ts'],
+    },
   },
 })
