@@ -11,5 +11,3 @@ function checkNetworkStatus(): Promise<boolean>;
 ## Returns
 
 `Promise`\<`boolean`\>
-
-是否在线

@@ -15,7 +15,6 @@ export default defineBuildConfig({
     'dayjs',
     'decimal.js',
     'query-string',
-    'ofetch',
   ],
   rollup: {
     emitCJS: true,

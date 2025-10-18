@@ -12,9 +12,6 @@ catalogs:
     decimal.js:
       specifier: ^10.5.0
       version: 10.5.0
-    ofetch:
-      specifier: ^1.4.1
-      version: 1.4.1
     query-string:
       specifier: ^9.1.2
       version: 9.1.2
@@ -86,9 +83,6 @@ importers:
       decimal.js:
         specifier: catalog:build
         version: 10.5.0
-      ofetch:
-        specifier: catalog:build
-        version: 1.4.1
       query-string:
         specifier: catalog:build
         version: 9.1.2
@@ -2739,9 +2733,6 @@ packages:
     resolution: {integrity: sha512-IGWlC6So2xv6V4cIDmoV0SwwWx7zLG086gyqkyumteH2fIgCAM4nDVFB2iDRszDvmdSVW9xb1N+2KjQ6C7d4og==}
     engines: {node: ^14.16.0 || >=16.10.0}
     hasBin: true
-
-  ofetch@1.4.1:
-    resolution: {integrity: sha512-QZj2DfGplQAr2oj9KzceK9Hwz6Whxazmn85yYeVuS3u9XTMOGMRx0kO95MQ+vLsj/S/NwBDMMLU5hpxvI6Tklw==}
 
   ohash@1.1.3:
     resolution: {integrity: sha512-zuHHiGTYTA1sYJ/wZN+t5HKZaH23i4yI1HMwbuXm24Nid7Dv0KcuRlKoNKS9UNfAVSBlnGLcuQrnOKWOZoEGaw==}
@@ -6496,12 +6487,6 @@ snapshots:
       execa: 8.0.1
       pathe: 1.1.2
       ufo: 1.5.3
-
-  ofetch@1.4.1:
-    dependencies:
-      destr: 2.0.3
-      node-fetch-native: 1.6.4
-      ufo: 1.6.1
 
   ohash@1.1.3: {}
 

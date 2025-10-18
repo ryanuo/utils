@@ -32,4 +32,3 @@ catalogs:
     query-string: ^9.1.2
     decimal.js: ^10.5.0
     dayjs: ^1.11.13
-    ofetch: ^1.4.1

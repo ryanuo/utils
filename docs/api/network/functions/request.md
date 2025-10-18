@@ -7,7 +7,8 @@ function request<T>(
    method, 
    url, 
    data?, 
-headers?): Promise<T>;
+   headers?, 
+timeout?): Promise<T>;
 ```
 
 封装 GET/POST 请求（自动处理 JSON）
@@ -35,6 +36,10 @@ headers?): Promise<T>;
 ### headers?
 
 `Record`\<`string`, `string`\> = `{}`
+
+### timeout?
+
+`number` = `5000`
 
 ## Returns
 

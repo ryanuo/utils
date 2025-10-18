@@ -1,5 +1,3 @@
-import { ofetch } from 'ofetch'
-
 /**
  * 带超时的 fetch 请求
  * @category Http
@@ -16,7 +14,7 @@ async function fetchWithTimeout(
   const timer = setTimeout(() => controller.abort(), timeout)
 
   try {
-    const response = await ofetch(url, {
+    const response = await fetch(url, {
       ...options,
       signal: controller.signal,
     })
@@ -38,16 +36,17 @@ async function request<T = any>(
   url: string,
   data?: object,
   headers: Record<string, string> = {},
+  timeout: number = 5000,
 ): Promise<T> {
   const config: RequestInit = {
     method,
     headers: { 'Content-Type': 'application/json', ...headers },
   }
 
-  if (data)
+  if (data && method !== 'GET')
     config.body = JSON.stringify(data)
 
-  const response = await fetchWithTimeout(url, config)
+  const response = await fetchWithTimeout(url, config, timeout)
   if (!response.ok)
     throw new Error(`HTTP错误 ${response.status}`)
 
@@ -64,12 +63,13 @@ async function parallelRequests<T>(
   requests: (() => Promise<T>)[],
   concurrency: number = 5,
 ): Promise<T[]> {
-  const results: T[] = []
+  const results: T[] = Array.from({ length: requests.length })
   const executing = new Set<Promise<any>>()
 
-  for (const req of requests) {
+  for (let i = 0; i < requests.length; i++) {
+    const req = requests[i]
     const p = req().then((res) => {
-      results.push(res)
+      results[i] = res // 按输入顺序写入
       executing.delete(p)
     })
     executing.add(p)
@@ -115,16 +115,13 @@ async function getClientIP(): Promise<string> {
  * @returns IndexedDB 缓存对象
  */
 async function getIndexedDBCache(dbName: string, storeName: string) {
-  const openDB = (): Promise<IDBDatabase> => {
-    return new Promise((resolve, reject) => {
+  const openDB = (): Promise<IDBDatabase> =>
+    new Promise((resolve, reject) => {
       const request = indexedDB.open(dbName, 1)
-      request.onupgradeneeded = () => {
-        request.result.createObjectStore(storeName)
-      }
+      request.onupgradeneeded = () => request.result.createObjectStore(storeName)
       request.onsuccess = () => resolve(request.result)
       request.onerror = reject
     })
-  }
 
   const db = await openDB()
 
@@ -153,7 +150,6 @@ async function getIndexedDBCache(dbName: string, storeName: string) {
 /**
  * 检测网络连接状态
  * @category Http
- * @returns 是否在线
  */
 function checkNetworkStatus(): Promise<boolean> {
   return new Promise((resolve) => {
@@ -161,7 +157,6 @@ function checkNetworkStatus(): Promise<boolean> {
       resolve(navigator.onLine)
     }
     else {
-      // 兼容性方案
       const img = new Image()
       img.onload = () => resolve(true)
       img.onerror = () => resolve(false)
