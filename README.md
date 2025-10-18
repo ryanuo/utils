@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/bundlephobia/minzip/@ryanuo/utils?style=flat&colorA=080f12&colorB=1fa669&label=minzip" alt="bundle size">
   </a>
   <a href="https://codecov.io/gh/ryanuo/utils" style="text-decoration: none;">
-    <img src="https://img.shields.io/codecov/c/gh/ryanuo/utils/main?style=flat&colorA=18181B&colorB=F0DB4F" alt="Test coverage">
+    <img src="https://img.shields.io/codecov/c/gh/ryanuo/utils/main?style=flat&colorA=080f12&colorB=1fa669" alt="Test coverage">
   </a>
   <a href="https://www.jsdocs.io/package/@ryanuo/utils" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=080f12&colorB=1fa669" alt="JSDocs">
