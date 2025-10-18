@@ -100,54 +100,6 @@ async function getClientIP(): Promise<string> {
 }
 
 /**
- * 获取 IndexedDB 缓存
- * @example
- * ```ts twoslash
- * import { getIndexedDBCache } from '@ryanuo/utils';
- * // 使用示例
- * const cache = await getIndexedDBCache('api-cache', 'responses');
- * await cache.set('users', [{ id: 1, name: 'Alice' }]);
- * const users = await cache.get('users');
- * ```
- * @category Http
- * @param dbName indexedDB 数据库名称
- * @param storeName 缓存对象名称
- * @returns IndexedDB 缓存对象
- */
-async function getIndexedDBCache(dbName: string, storeName: string) {
-  const openDB = (): Promise<IDBDatabase> =>
-    new Promise((resolve, reject) => {
-      const request = indexedDB.open(dbName, 1)
-      request.onupgradeneeded = () => request.result.createObjectStore(storeName)
-      request.onsuccess = () => resolve(request.result)
-      request.onerror = reject
-    })
-
-  const db = await openDB()
-
-  return {
-    async get<T>(key: string): Promise<T | undefined> {
-      return new Promise((resolve) => {
-        const tx = db.transaction(storeName, 'readonly')
-        const store = tx.objectStore(storeName)
-        const request = store.get(key)
-        request.onsuccess = () => resolve(request.result)
-        request.onerror = () => resolve(undefined)
-      })
-    },
-    async set(key: string, value: any): Promise<void> {
-      return new Promise((resolve, reject) => {
-        const tx = db.transaction(storeName, 'readwrite')
-        const store = tx.objectStore(storeName)
-        const request = store.put(value, key)
-        request.onsuccess = () => resolve()
-        request.onerror = reject
-      })
-    },
-  }
-}
-
-/**
  * 检测网络连接状态
  * @category Http
  */
@@ -167,7 +119,6 @@ function checkNetworkStatus(): Promise<boolean> {
 
 export {
   checkNetworkStatus,
-  getIndexedDBCache,
   getClientIP,
   parallelRequests,
   fetchWithTimeout,
